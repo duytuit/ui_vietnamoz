@@ -1,4 +1,4 @@
-import { contactData } from '~/shared/data';
+import { contactData } from '@/shared/data';
 import Form from '../common/Form';
 import HeaderWidget from '../common/HeaderWidget';
 

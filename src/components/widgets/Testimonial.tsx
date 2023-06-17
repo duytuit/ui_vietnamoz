@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { testimonialData } from '~/shared/data';
+import { testimonialData } from '@/shared/data';
 import HeaderWidget from '../common/HeaderWidget';
 
 const Testimonial = () => {

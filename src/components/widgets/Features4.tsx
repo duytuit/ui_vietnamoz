@@ -1,4 +1,4 @@
-import { FeaturesProps } from '~/shared/types';
+import { FeaturesProps } from '@/shared/types';
 import HeaderWidget from '../common/HeaderWidget';
 
 const Features4 = ({ header, items }: FeaturesProps) => (

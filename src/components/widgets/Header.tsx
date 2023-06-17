@@ -2,13 +2,13 @@
 
 import { useState } from 'react';
 import { IconRss } from '@tabler/icons-react';
-import ToggleDarkMode from '~/components/atoms/ToggleDarkMode';
 import Link from 'next/link';
-import Logo from '~/components/atoms/Logo';
+import { headerData } from '@/shared/data';
+import Logo from '../atoms/Logo';
 import ToggleMenu from '../atoms/ToggleMenu';
-import { headerData } from '~/shared/data';
+import ToggleDarkMode from '../atoms/ToggleDarkMode';
+import { CallToAction } from '@/shared/types';
 import CTA from '../common/CTA';
-import CallToAction from './CallToAction';
 
 const Header = () => {
   const { links, actions, isSticky, showToggleTheme, showRssFeed, position } = headerData;
@@ -43,7 +43,7 @@ const Header = () => {
       return newValues;
     });
   };
-
+ 
   const handleToggleMenuOnClick = () => {
     setIsToggleMenuOpen(!isToggleMenuOpen);
   };

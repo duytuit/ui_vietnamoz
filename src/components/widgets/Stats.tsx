@@ -1,5 +1,5 @@
-import { StatsProps } from '~/shared/types';
-import { toUiAmount } from '~/utils/utils';
+import { StatsProps } from '@/shared/types';
+import { toUiAmount } from '@/utils/utils';
 
 const Stats = ({ items }: StatsProps) => {
   return (

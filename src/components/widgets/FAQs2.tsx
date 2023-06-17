@@ -1,7 +1,7 @@
 import HeaderWidget from '../common/HeaderWidget';
 import Collapse from '../common/Collapse';
 import { IconChevronDown, IconChevronUp } from '@tabler/icons-react';
-import { FAQsProps, Item } from '~/shared/types';
+import { FAQsProps, Item } from '@/shared/types';
 
 const FAQs2 = ({ header, items }: FAQsProps) => (
   <section id="faqsTwo">

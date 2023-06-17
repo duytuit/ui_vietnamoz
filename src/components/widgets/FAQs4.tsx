@@ -3,9 +3,9 @@
 import HeaderWidget from '../common/HeaderWidget';
 import Collapse from '../common/Collapse';
 import { IconMinus, IconPlus } from '@tabler/icons-react';
-import { FAQsProps, Item, Tab } from '~/shared/types';
+import { FAQsProps, Item, Tab } from '@/shared/types';
 import { useState } from 'react';
-import useWindowSize from '~/hooks/useWindowSize';
+import useWindowSize from '@/hooks/useWindowSize';
 import Dropdown from '../common/Dropdown';
 
 const FAQs4 = ({ header, tabs }: FAQsProps) => {

@@ -1,4 +1,4 @@
-import { HeaderWidgetProps } from '~/shared/types';
+import { HeaderWidgetProps } from '@/shared/types';
 
 const HeaderWidget = ({ header, titleClassname }: HeaderWidgetProps) => {
   const { title, subtitle, highlight, position } = header;

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { SocialProofProps } from '~/shared/types';
+import { SocialProofProps } from '@/shared/types';
 
 const SocialProof = ({ images }: SocialProofProps) => (
   <section id="social-proof">

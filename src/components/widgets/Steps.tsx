@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { IconArrowDown, IconCheck } from '@tabler/icons-react';
-import { stepsData } from '~/shared/data';
+import { stepsData } from '@/shared/data';
 
 const Steps = () => {
   const { title, items, image } = stepsData;

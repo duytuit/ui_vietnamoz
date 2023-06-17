@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { HeroProps } from '~/shared/types';
+import { HeroProps } from '@/shared/types';
 import CTA from '../common/CTA';
 
 const Hero = (props: { data: HeroProps }) => {

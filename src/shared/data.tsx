@@ -42,15 +42,15 @@ import {
   TestimonialProps,
 } from './types';
 
-import cameraFrontImg from '~/assets/images/camera-front.jpg';
-import cameraBackImg from '~/assets/images/camera-back.jpg';
-import heroImg from '~/assets/images/hero.jpg';
-import hero2Img from '~/assets/images/hero2.jpg';
-import gasImg from '~/assets/images/gas.jpg';
-import nextJsLogo from '~/assets/images/nextjs-logo.png';
-import reactLogo from '~/assets/images/react-logo.png';
-import tailwindCssLogo from '~/assets/images/tailwind-css-logo.png';
-import typescriptLogo from '~/assets/images/typescript-logo.png';
+import cameraFrontImg from '@/assets/images/camera-front.jpg';
+import cameraBackImg from '@/assets/images/camera-back.jpg';
+import heroImg from '@/assets/images/hero.jpg';
+import hero2Img from '@/assets/images/hero2.jpg';
+import gasImg from '@/assets/images/gas.jpg';
+import nextJsLogo from '@/assets/images/nextjs-logo.png';
+import reactLogo from '@/assets/images/react-logo.png';
+import tailwindCssLogo from '@/assets/images/tailwind-css-logo.png';
+import typescriptLogo from '@/assets/images/typescript-logo.png';
 
 // Announcement data
 export const announcementData: AnnouncementProps = {

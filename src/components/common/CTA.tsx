@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { CallToAction } from '~/shared/types';
+import { CallToAction } from '@/shared/types';
 
 const CTA = (props: { data: CallToAction; class?: string }) => {
   const { text, href, icon: Icon, targetBlank, btnText, btnType } = props.data;

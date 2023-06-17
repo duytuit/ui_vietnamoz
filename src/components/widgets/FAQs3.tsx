@@ -1,7 +1,7 @@
 import HeaderWidget from '../common/HeaderWidget';
 import Collapse from '../common/Collapse';
 import { IconMinus, IconPlus } from '@tabler/icons-react';
-import { CallToAction, FAQsProps, Item } from '~/shared/types';
+import { CallToAction, FAQsProps, Item } from '@/shared/types';
 import CTA from '../common/CTA';
 
 const FAQs3 = ({ header, items, callToAction }: FAQsProps) => (

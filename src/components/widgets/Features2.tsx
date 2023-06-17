@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { FeaturesProps } from '~/shared/types';
+import { FeaturesProps } from '@/shared/types';
 import HeaderWidget from '../common/HeaderWidget';
 
 const Features2 = ({ header, items }: FeaturesProps) => (

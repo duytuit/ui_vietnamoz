@@ -1,5 +1,5 @@
 import { IconArrowDownRight } from '@tabler/icons-react';
-import { FAQsProps, Item } from '~/shared/types';
+import { FAQsProps, Item } from '@/shared/types';
 import HeaderWidget from '../common/HeaderWidget';
 
 const FAQs = ({ header, items }: FAQsProps) => (
