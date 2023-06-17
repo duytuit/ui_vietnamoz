@@ -2,6 +2,7 @@
 // _app.js or _app.tsx
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
+const typographys =  require('@tailwindcss/typography');
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -25,6 +26,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [typographys],
   darkMode: 'class',
 }
