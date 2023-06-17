@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap",
+    "prettier": "prettier --write --ignore-unknown .",
+    "prettier:check": "prettier --check --ignore-unknown ."
   },
   "dependencies": {
     "@tabler/icons-react": "^2.22.0",
@@ -19,6 +22,7 @@
     "gray-matter": "^4.0.3",
     "markdown-it": "^13.0.1",
     "next": "13.4.6",
+    "next-sitemap": "^4.1.3",
     "next-themes": "^0.2.1",
     "postcss": "8.4.24",
     "react": "18.2.0",
