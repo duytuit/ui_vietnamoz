@@ -9,6 +9,8 @@ const inter = Inter({ subsets: ['latin'] })
 import { Inter as CustomFont } from 'next/font/google';
 const customFont = CustomFont({ subsets: ['latin'], variable: '--font-custom' });
 
+import cameraFrontImg from '@/assets/images/camera-front.jpg';
+
 export const metadata = {
   title: {
     template: `%s — ${SITE.name}`,
@@ -31,7 +33,9 @@ export default function RootLayout({
       <body className="bg-white tracking-tight text-gray-900 antialiased dark:bg-slate-900 dark:text-slate-300">
         <Providers>
           {/* <Announcement /> */}
-          <Header />
+          <div className="bg-image">
+              <Header />
+          </div>
           <main>{children}</main>
           <Footer2 />
         </Providers>

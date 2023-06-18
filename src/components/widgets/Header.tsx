@@ -50,9 +50,7 @@ const Header = () => {
 
   return (
     <header
-      className={`top-0 z-40 mx-auto w-full flex-none bg-white transition-all duration-100 ease-in dark:bg-slate-900 md:bg-white/90 md:backdrop-blur-sm dark:md:bg-slate-900/90 ${
-        isSticky ? 'sticky' : 'relative'
-      }`}
+      className="top-0 z-40 mx-auto w-full flex-none bg-transparent text-[#fff] transition-all duration-100 ease-in md:backdrop-blur-sm fixed"
       id="header"
     >
       <div className="mx-auto w-full max-w-7xl py-3 px-3 md:flex md:justify-between md:py-3.5 md:px-4">
@@ -83,7 +81,7 @@ const Header = () => {
                   {links && links.length ? (
                     <>
                       <button
-                        className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out hover:text-gray-900 dark:hover:text-white"
+                        className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out dark:hover:text-white"
                         onClick={() => handleDropdownOnClick(index)}
                       >
                         {label} {Icon && <Icon className="ml-0.5 hidden h-3.5 w-3.5 md:inline" />}
@@ -110,7 +108,7 @@ const Header = () => {
                     </>
                   ) : (
                     <Link
-                      className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out hover:text-gray-900 dark:hover:text-white"
+                      className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out dark:hover:text-white"
                       href={href as string}
                       onClick={() => (isToggleMenuOpen ? handleToggleMenuOnClick() : handleDropdownOnClick(index))}
                     >
@@ -127,10 +125,9 @@ const Header = () => {
           } fixed bottom-0 left-0 w-full justify-end p-3 md:static md:mb-0 md:flex md:w-auto md:self-center md:p-0`}
         >
           <div className="flex w-full items-center justify-between md:w-auto">
-            {showToggleTheme && <ToggleDarkMode />}
             {showRssFeed && (
               <Link
-                className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                 aria-label="RSS Feed"
                 href=""
               >
@@ -143,7 +140,7 @@ const Header = () => {
                   <CTA
                     key={`item-action-${index}`}
                     data={callToAction as CallToAction}
-                    class="m-1 py-2 px-5 text-sm font-semibold shadow-none md:px-6"
+                    class="m-1 py-2 px-5 text-sm font-semibold shadow-none md:px-6 rounded-full bg-transparent"
                   />
                 ))}
               </div>

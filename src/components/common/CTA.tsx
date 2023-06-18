@@ -7,10 +7,10 @@ const CTA = (props: { data: CallToAction; class?: string }) => {
   return (
     <>
       {props.data && text && href && (
-        <div className="flex w-full sm:w-auto">
+        <div className="flex w-full sm:w-auto text-[#fff]">
           {targetBlank ? (
             <Link
-              className={`btn ${btnType === 'primary' ? 'btn-primary' : ''} w-full sm:mb-0 ${
+              className={`btn ${btnType === 'primary' ? 'btn-primary' : ''} w-full sm:mb-0 text-[#fff] ${
                 props.class ? props.class : ''
               } ${btnText === 'uppercase' ? 'uppercase' : ''}`}
               href={href}
@@ -21,7 +21,7 @@ const CTA = (props: { data: CallToAction; class?: string }) => {
             </Link>
           ) : (
             <Link
-              className={`btn ${btnType === 'primary' ? 'btn-primary' : ''} w-full sm:mb-0 ${
+              className={`btn ${btnType === 'primary' ? 'btn-primary' : ''} w-full sm:mb-0 text-[#fff] ${
                 props.class ? props.class : ''
               } ${btnText === 'uppercase' ? 'uppercase' : ''}`}
               href={href}

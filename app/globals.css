@@ -45,5 +45,13 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-
+.bg-image {
+  height: 600px;
+  padding-right: 0;
+  padding-left: 0;
+  background-image: url('/assets/images/hero.5aa2f4fae28fcf3dc01a.jpg');
+  background-position: 50% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
