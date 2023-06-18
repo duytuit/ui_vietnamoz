@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { CallToAction } from '@/shared/types';
 
-const CTA = (props: { data: CallToAction; class?: string }) => {
+const CTA = (props: { data: CallToAction; class?: string }):JSX.Element => {
   const { text, href, icon: Icon, targetBlank, btnText, btnType } = props.data;
 
   return (
