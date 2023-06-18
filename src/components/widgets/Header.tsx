@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IconRss } from '@tabler/icons-react';
 import Link from 'next/link';
 import { headerData } from '@/shared/data';
@@ -9,10 +9,24 @@ import ToggleMenu from '../atoms/ToggleMenu';
 import ToggleDarkMode from '../atoms/ToggleDarkMode';
 import { CallToAction } from '@/shared/types';
 import CTA from '../common/CTA';
+function useIsScrollTop() {
+  const [isTop, setIsTop] = useState(true)
+  useEffect(() => {
+    function onScroll() {
+      setIsTop(window.scrollY <= 30)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
 
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [])
+
+  return isTop
+}
 const Header = () => {
   const { links, actions, isSticky, showToggleTheme, showRssFeed, position } = headerData;
-
+  const isTop = useIsScrollTop()
   const updatedIsDropdownOpen =
     links &&
     links.map(() => {
@@ -50,7 +64,11 @@ const Header = () => {
 
   return (
     <header
-      className="top-0 z-40 mx-auto w-full flex-none bg-transparent text-[#fff] transition-all duration-100 ease-in md:backdrop-blur-sm fixed"
+      className={`top-0 z-40 mx-auto w-full flex-none bg-transparent text-[#fff] transition-all duration-100 ease-in md:backdrop-blur-sm fixed ${
+        isTop
+          ? "bg-transparent"
+          : "bg-[#006eec] transition-all"
+      }`}
       id="header"
     >
       <div className="mx-auto w-full max-w-7xl py-3 px-3 md:flex md:justify-between md:py-3.5 md:px-4">
@@ -140,7 +158,7 @@ const Header = () => {
                   <CTA
                     key={`item-action-${index}`}
                     data={callToAction as CallToAction}
-                    class="m-1 py-2 px-5 text-sm font-semibold shadow-none md:px-6 rounded-full bg-transparent"
+                    class="m-1 py-2 px-5 text-sm font-semibold shadow-none md:px-6 rounded-full bg-transparent border-white hover:bg-[#bd46e8] hover:border-white"
                   />
                 ))}
               </div>

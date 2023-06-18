@@ -88,7 +88,7 @@ export const headerData: HeaderProps = {
   actions: [
     {
       text: 'Emergency Service',
-      href: 'https://github.com/onwidget/tailnext',
+      href: '#',
       targetBlank: true,
       btnType: 'secondary',
     },
