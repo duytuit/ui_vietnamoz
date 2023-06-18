@@ -9,7 +9,8 @@
     "lint": "next lint",
     "postbuild": "next-sitemap",
     "prettier": "prettier --write --ignore-unknown .",
-    "prettier:check": "prettier --check --ignore-unknown ."
+    "prettier:check": "prettier --check --ignore-unknown .",
+    "pm2": "pm2 start npm --name ui_vietnamoz -- run start -- -p 8088"
   },
   "dependencies": {
     "@tabler/icons-react": "^2.22.0",
