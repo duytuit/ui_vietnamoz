@@ -18,10 +18,6 @@ const nextConfig = {
           hostname: 'source.unsplash.com',
         },
       ],
-    },
-    experimental: { appDir: true ,typedRoutes: true},
-    compiler: {
-      styledComponents: true,
     }
 }
 

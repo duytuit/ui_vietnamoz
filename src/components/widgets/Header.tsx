@@ -113,9 +113,7 @@ const Header = () => {
                           <li key={`item-link-${index2}`}>
                             <Link
                               className="whitespace-no-wrap block py-2 px-5 first:rounded-t last:rounded-b dark:hover:bg-gray-700 md:hover:bg-gray-200"
-                              href= {{
-                                pathname: href2
-                              }}
+                              href= {href2 as string}
                               onClick={() =>
                                 isToggleMenuOpen ? handleToggleMenuOnClick() : handleCloseDropdownOnClick(index)
                               }
@@ -129,7 +127,7 @@ const Header = () => {
                   ) : (
                     <Link
                       className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out dark:hover:text-white"
-                      href={{href}}
+                      href={href as string}
                       onClick={() => (isToggleMenuOpen ? handleToggleMenuOnClick() : handleDropdownOnClick(index))}
                     >
                       {label}
