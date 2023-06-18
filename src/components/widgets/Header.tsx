@@ -64,7 +64,7 @@ const Header = () => {
 
   return (
     <header
-      className={`top-0 z-40 mx-auto w-full flex-none bg-transparent text-[#fff] transition-all duration-100 ease-in md:backdrop-blur-sm fixed ${
+      className={`top-0 z-40 mx-auto w-full flex-none text-[#fff] transition-all duration-100 ease-in md:backdrop-blur-sm fixed ${
         isTop
           ? "bg-transparent"
           : "bg-[#006eec] transition-all"
