@@ -13,7 +13,7 @@ const CTA = (props: { data: CallToAction; class?: string }) => {
               className={`btn ${btnType === 'primary' ? 'btn-primary' : ''} w-full sm:mb-0 text-[#fff] ${
                 props.class ? props.class : ''
               } ${btnText === 'uppercase' ? 'uppercase' : ''}`}
-              href={href}
+              href={{href}}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -24,7 +24,7 @@ const CTA = (props: { data: CallToAction; class?: string }) => {
               className={`btn ${btnType === 'primary' ? 'btn-primary' : ''} w-full sm:mb-0 text-[#fff] ${
                 props.class ? props.class : ''
               } ${btnText === 'uppercase' ? 'uppercase' : ''}`}
-              href={href}
+              href={{href}}
             >
               {Icon && <Icon className="mr-1 -ml-1.5 h-5 w-5" />} {text}
             </Link>
