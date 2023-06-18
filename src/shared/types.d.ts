@@ -16,7 +16,7 @@ interface HeaderWidgetProps {
 interface CallToAction {
   text: string;
   href: string;
-  icon?: Function;
+  icon?: Function< Element >;
   targetBlank?: boolean;
   btnText?: 'uppercase' | 'capitalize';
   btnType?: 'primary' | 'secondary';
@@ -59,7 +59,7 @@ interface RadioBtn {
 }
 
 interface SmallForm {
-  icon?: Function;
+  icon?: Function< Element >;
   input: Input;
   btn: Button;
 }
@@ -86,7 +86,7 @@ interface Item {
   description?: string | Array<string>;
   href?: string;
   form?: SmallForm;
-  icon?: Function;
+  icon?: Function< Element >;
   callToAction?: CallToAction;
   link?: Link;
 }
@@ -103,7 +103,7 @@ interface Testimonial {
   occupation: string;
   comment: string;
   image?: Image;
-  icon?: Function;
+  icon?: Function< Element >;
   href?: string;
 }
 
@@ -111,7 +111,7 @@ interface Link {
   label?: string;
   href?: string;
   ariaLabel?: string;
-  icon?: Function;
+  icon?: Function<Element>;
 }
 
 interface Price {

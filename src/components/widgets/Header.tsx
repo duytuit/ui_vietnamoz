@@ -113,7 +113,9 @@ const Header = () => {
                           <li key={`item-link-${index2}`}>
                             <Link
                               className="whitespace-no-wrap block py-2 px-5 first:rounded-t last:rounded-b dark:hover:bg-gray-700 md:hover:bg-gray-200"
-                              href={href2 as string}
+                              href= {{
+                                pathname: href2
+                              }}
                               onClick={() =>
                                 isToggleMenuOpen ? handleToggleMenuOnClick() : handleCloseDropdownOnClick(index)
                               }
@@ -127,7 +129,7 @@ const Header = () => {
                   ) : (
                     <Link
                       className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out dark:hover:text-white"
-                      href={href as string}
+                      href={{href}}
                       onClick={() => (isToggleMenuOpen ? handleToggleMenuOnClick() : handleDropdownOnClick(index))}
                     >
                       {label}
@@ -147,7 +149,7 @@ const Header = () => {
               <Link
                 className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                 aria-label="RSS Feed"
-                href=""
+                href="#"
               >
                 <IconRss className="h-5 w-5" />
               </Link>
