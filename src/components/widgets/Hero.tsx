@@ -1,10 +1,20 @@
 import Image from 'next/image';
 import { HeroProps } from '@/shared/types';
 import CTA from '../common/CTA';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faB, faL, faR, fas } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import SearchLocation from './SearchLocation';
+library.add(fas)
+library.add(faR)
+library.add(faL)
+library.add(faB)
+
 
 const Hero = (props: { data: HeroProps }) => {
   const { title, subtitle, callToAction, callToAction2, image } = props.data;
 
+  
   return (
     <section id="heroOne">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -30,6 +40,8 @@ const Hero = (props: { data: HeroProps }) => {
             </div>
           )}
         </div>
+        {/* <FontAwesomeIcon icon="search" color='#fafafa' /> */}
+        <SearchLocation />
       </div>
     </section>
   );
