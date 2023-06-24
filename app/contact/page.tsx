@@ -1,20 +1,17 @@
-import type { Metadata } from 'next';
+import Breadcrumb from "@/components/Common/Breadcrumb";
+import Contact from "@/components/Contact";
 
-import Contact2 from '@/components/widgets/Contact2';
-import Features2 from '@/components/widgets/Features2';
-import { featuresData2 } from '@/shared/data';
-
-export const metadata: Metadata = {
-  title: 'Contact us',
-};
-
-const Page = () => {
+const ContactPage = () => {
   return (
     <>
-      <Contact2 />
-      <Features2 {...featuresData2} />
+      <Breadcrumb
+        pageName="Contact Page"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
+      />
+
+      <Contact />
     </>
   );
 };
 
-export default Page;
+export default ContactPage;
