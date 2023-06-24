@@ -42,6 +42,7 @@ const Hero = (props: { data: HeroProps }) => {
         </div>
         {/* <FontAwesomeIcon icon="search" color='#fafafa' /> */}
         <SearchLocation />
+
       </div>
     </section>
   );

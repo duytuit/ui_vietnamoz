@@ -121,7 +121,7 @@ export const heroData: HeroProps = {
   ),
   callToAction: {
     text: 'Get template',
-    href: 'https://github.com/onwidget/tailnext',
+    href: '#',
     icon: IconDownload,
     targetBlank: true,
     btnType: 'primary',
@@ -405,14 +405,14 @@ export const callToActionData: CallToActionProps = {
     'Aliquam sodales porttitor lacus ac tristique. Etiam posuere elit at leo feugiat sodales. Sed ac mauris quis sem tempor condimentum non at metus.',
   callToAction: {
     text: 'Get template',
-    href: 'https://github.com/onwidget/tailnext',
+    href: '#',
     icon: IconDownload,
   },
   items: [
     {
       title: 'Get template',
       description: 'Aliquam sodales est lectus, quis.',
-      href: 'https://github.com/onwidget/tailnext',
+      href: '#',
     },
     {
       title: 'Learn more',
