@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Hero = () => {
   return (
@@ -12,6 +13,8 @@ const Hero = () => {
             <div className="w-full px-4">
             </div>
           </div> */}
+       <FontAwesomeIcon icon="moon" color="silver" size="3x" />
+<FontAwesomeIcon icon="rocket" color="rebeccapurple" size="2x" />
         </div>
       </section>
     </>
