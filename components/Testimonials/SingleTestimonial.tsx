@@ -33,7 +33,7 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
             <Image src={image} alt={name} fill />
           </div>
           <div className="w-full">
-            <h5 className="mb-1 text-lg font-semibold text-dark dark:text-white lg:text-base xl:text-lg">
+            <h5 className="mb-1 text-lg font-semibold text-white dark:text-white lg:text-base xl:text-lg">
               {name}
             </h5>
             <p className="text-sm text-body-color">{designation}</p>

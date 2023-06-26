@@ -7,7 +7,7 @@ const Contact = () => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
             <div
-              className="wow fadeInUp mb-12 rounded-md bg-primary/[3%] py-11 px-8 dark:bg-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]"
+              className="wow fadeInUp mb-12 rounded-md bg-primary/[3%] py-11 px-8 dark:bg-white sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]"
               data-wow-delay=".15s
               "
             >
@@ -23,7 +23,7 @@ const Contact = () => {
                     <div className="mb-8">
                       <label
                         htmlFor="name"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
+                        className="mb-3 block text-sm font-medium text-white dark:text-white"
                       >
                         Your Name
                       </label>
@@ -38,7 +38,7 @@ const Contact = () => {
                     <div className="mb-8">
                       <label
                         htmlFor="email"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
+                        className="mb-3 block text-sm font-medium text-white dark:text-white"
                       >
                         Your Email
                       </label>
@@ -53,7 +53,7 @@ const Contact = () => {
                     <div className="mb-8">
                       <label
                         htmlFor="message"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
+                        className="mb-3 block text-sm font-medium text-white dark:text-white"
                       >
                         Your Message
                       </label>

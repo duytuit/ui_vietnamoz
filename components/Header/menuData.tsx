@@ -3,40 +3,40 @@ import { Menu } from "@/types/menu";
 const menuData: Menu[] = [
   {
     id: 1,
-    title: "Trang Chủ",
+    title: "APPLY",
     path: "/",
     newTab: false,
   },
   {
     id: 2,
-    title: "Dịch Vụ Làm Hộ Chiếu",
+    title: "TRACK",
     path: "/about",
     newTab: false,
   },
   {
     id: 33,
-    title: "Căn Cước Công Dân",
+    title: "FAQ",
     path: "/blog",
     newTab: false,
   },
   {
     id: 3,
-    title: "Lý Lịch Tư Pháp",
+    title: "CONTACT",
     path: "/contact",
     newTab: false,
   },
-  {
-    id: 5,
-    title: "Tin Tức",
-    path: "/contact",
-    newTab: false,
-  },
-  {
-    id: 6,
-    title: "Liên Hệ",
-    path: "/contact",
-    newTab: false,
-  },
+  // {
+  //   id: 5,
+  //   title: "Tin Tức",
+  //   path: "/contact",
+  //   newTab: false,
+  // },
+  // {
+  //   id: 6,
+  //   title: "Liên Hệ",
+  //   path: "/contact",
+  //   newTab: false,
+  // },
   // {
   //   id: 4,
   //   title: "Tin Tức",

@@ -10,11 +10,11 @@
   }
 }
 #home{
-  background-image:url('/images/hero/hochieulaynhanh.png');
-  background-repeat: no-repeat;
+  background-image:url('/images/hero/hero.5aa2f4fae28fcf3dc01a.jpg');
+  background-position: 50% 100%;
   background-size: cover;
-  width: 100%;
-  height: 678px;;
+  background-repeat: no-repeat;
+  height: 600px;
 }
 @layer components {
   input[type="checkbox"]:checked ~ label span svg {
