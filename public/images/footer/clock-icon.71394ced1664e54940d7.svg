@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144">
+  <g id="clock-icon" transform="translate(2 2)">
+    <circle id="ellipse" cx="69.5" cy="69.5" r="69.5" stroke-width="5" transform="translate(0.5 0.5)" stroke="#ca00fa" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#fff"/>
+    <line id="line" y2="56" stroke-width="5" transform="translate(67.5 23.5)" stroke="#ca00fa" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/>
+    <line id="line-2" data-name="line" x1="35" transform="translate(67.5 79.5)" fill="none" stroke="#ca00fa" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+  </g>
+</svg>

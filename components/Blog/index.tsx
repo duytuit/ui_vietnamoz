@@ -1,10 +1,12 @@
 import SectionTitle from "../Common/SectionTitle";
+import Header from "../Header";
 import SingleBlog from "./SingleBlog";
 import blogData from "./blogData";
 
 const Blog = () => {
   return (
-    <section id="blog" className="bg-primary/5 py-16 md:py-20 lg:py-28">
+    <>
+     <section id="blog" className="py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
           title="Our Latest Blogs"
@@ -21,6 +23,8 @@ const Blog = () => {
         </div>
       </div>
     </section>
+    </>
+   
   );
 };
 

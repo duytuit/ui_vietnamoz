@@ -3,8 +3,10 @@ import AboutSectionTwo from "@/components/About/AboutSectionTwo";
 import Blog from "@/components/Blog";
 import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
-import Contact from "@/components/Contact";
+import Contact from "@/components/Contact/old_index";
 import Features from "@/components/Features";
+import Emblem from "@/components/Footer/emblem";
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import SearchLocation from "@/components/Hero/search";
 import Pricing from "@/components/Pricing";
@@ -17,18 +19,12 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <>
+      <Header />
       <ScrollUp />
       <Hero />
-      <SearchLocation/>
-      {/* <Features />
-      <Video />
-      <Brands />
-      <AboutSectionOne />
-      <AboutSectionTwo />
-      <Testimonials /> */}
+      <SearchLocation />
       <Pricing />
-      {/* <Blog />
-      <Contact /> */}
+      <Emblem/>
     </>
   );
 }

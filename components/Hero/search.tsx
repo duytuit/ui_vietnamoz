@@ -31,9 +31,9 @@ export interface ColourOption {
   // 	bigOptions = bigOptions.concat(colourOptions);
   // }
   const options = [
-    { value: "Abe", label: "Abe", customAbbreviation: "https://www.dubaivisa.com/assets/flags/LC.svg" },
-    { value: "John", label: "John", customAbbreviation: "https://www.dubaivisa.com/assets/flags/LC.svg" },
-    { value: "Dustin", label: "Dustin", customAbbreviation: "https://www.dubaivisa.com/assets/flags/LC.svg" }
+    { value: "Abe", label: "Abe", customAbbreviation: "https://www.VietNamvisa.com/assets/flags/LC.svg" },
+    { value: "John", label: "John", customAbbreviation: "https://www.VietNamvisa.com/assets/flags/LC.svg" },
+    { value: "Dustin", label: "Dustin", customAbbreviation: "https://www.VietNamvisa.com/assets/flags/LC.svg" }
   ];
   
   const formatOptionLabel = ({ value, label, customAbbreviation }) => (
@@ -66,7 +66,7 @@ const SearchLocation = () => {
       const customStyles = {
         dropdownIndicator: (base: any) => ({
           ...base,
-          display: "none", // Custom colour
+        //   display: "none", // Custom colour
         }),
         indicatorSeparator: () => ({ display: "none" }),
         indicatorsContainer: () => ({
@@ -80,23 +80,24 @@ const SearchLocation = () => {
           border: "none",
           height: "80px",
           borderRadius: "10px",
-        //   flexDirection: "row-reverse",
+          flexDirection: "row-reverse",
           // "&:hover": {
           //     backgroundColor: '#e2e7ee',
           //   }
         }),
-        // option: (baseStyles, state) => ({
-        //   ...baseStyles,
-        //   backgroundColor: state.isSelected ? "#d5d9de" : "",
-        //   "&:hover": {
-        //     backgroundColor: "#d5d9de",
-        //   },
-        // }),
-        // clearIndicator: (base: any) => ({
-        //   ...base,
-        //   position: "absolute",
-        //   right: 0,
-        // }),
+        option: (baseStyles, state) => ({
+          ...baseStyles,
+          color:'black',
+          backgroundColor: state.isSelected ? "#d5d9de70" : "",
+          "&:hover": {
+            backgroundColor: "#d5d9de70",
+          },
+        }),
+        clearIndicator: (base: any) => ({
+          ...base,
+          position: "absolute",
+          right: 0,
+        }),
       };
       const ClearIndicator = (props) => {
         return (
@@ -125,7 +126,8 @@ const SearchLocation = () => {
                 // defaultValue={options[0]}
                 formatOptionLabel={formatOptionLabel}
                 options={options}
-                // styles={customStyles}
+                components={{ClearIndicator,DropdownIndicator}}
+                styles={customStyles}
                 isClearable
                 placeholder={"Enter your nationality to begin"}
             />

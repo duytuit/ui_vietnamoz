@@ -8,6 +8,7 @@ import menuData from "./menuData";
 const Header = () => {
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [pathName, setPathName] = useState(null);
   const navbarToggleHandler = () => {
     setNavbarOpen(!navbarOpen);
   };
@@ -23,7 +24,11 @@ const Header = () => {
   };
   useEffect(() => {
     window.addEventListener("scroll", handleStickyNavbar);
-  });
+    const queryString = window.location.pathname;
+    console.log(queryString);
+    
+    setPathName(queryString)
+  },[pathName]);
 
   // submenu handler
   const [openIndex, setOpenIndex] = useState(-1);
@@ -38,7 +43,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`header top-0 left-0 z-40 flex w-full items-center bg-transparent ${
+        className={`header top-0 left-0 z-40 flex w-full items-center ${pathName !='/' ? "!fixed !z-[9999] bg-[#b000da] !bg-opacity-80 shadow-sticky backdrop-blur-sm !transition dark:!bg-primary dark:!bg-opacity-20":"bg-transparent"} ${
           sticky
             ? "!fixed !z-[9999] !bg-[#006eec] !bg-opacity-80 shadow-sticky backdrop-blur-sm !transition dark:!bg-primary dark:!bg-opacity-20"
             : "absolute"
@@ -49,7 +54,7 @@ const Header = () => {
             <div className="w-60 max-w-full px-4 xl:mr-12">
               <Link
                 href="/"
-                className={`header-logo block w-full ${
+                className={`header-logo block w-full text-white ${
                   sticky ? "py-5 lg:py-2" : "py-8"
                 } `}
               >

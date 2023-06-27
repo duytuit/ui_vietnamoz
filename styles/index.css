@@ -7,6 +7,7 @@
 @layer base {
   body {
     font-family: "Inter", sans-serif;
+    background-color: #fafafa;
   }
 }
 #home{
@@ -33,6 +34,250 @@
   background-size: 30px;
   background-repeat: no-repeat;
   transition: background-color .3s ease;
+}
+.cc-wrapper{
+  width: 100%;
+  height: 40px;
+  background-image: url('/images/footer/cc.a3dbd4b91c2b356721a5.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 250px;
+}
+.VietNam-visa-emblem {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: -40px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50px;
+  background-color: #fff;
+  background-image: url(/images/footer/dubai-visa-emblem.2aa6bf8dd1f2259debfb.png);
+  background-position: 100% 100%;
+  background-size: cover;
+  box-shadow: 0 3px 5px -2px rgba(0,0,0,.5);
+}
+.emblem-wr {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 60px;
+    border-top: 2px solid #c900fa;
+    background-color: #fff;
+}
+
+.VietNam-time {
+  position: relative;
+  left: auto;
+  right: auto;
+  display: flex;
+  width: 300px;
+  height: 60px;
+  margin: 0 auto -30px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #c900fa;
+  border-radius: 50px;
+  background-color: #fff;
+  background-image: url('/images/footer/clock-icon.71394ced1664e54940d7.svg');
+  background-position: 7% 50%;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.cta-wr {
+  height: 250px;
+  justify-content: center;
+  flex-wrap: nowrap;
+  border-top: 2px solid #c900fa;
+  background-color: #fff;
+}
+.bp-container {
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  flex: 1;
+}
+.banner-h1, .banner-h2 {
+  margin-bottom: 0;
+  color: #fff;
+  font-weight: 400;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.bp-btn.btn-emergency {
+  display: none;
+  margin-top: 20px;
+  border: 2px solid #fff;
+  background-color: #d62bff;
+  text-transform: none;
+}
+.active {
+  background-color: #efefef;
+}
+.accordion, .accordion_active {
+  color: #000;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  transition: .4s;
+  border: none;
+  border-bottom: 1px solid #eee;
+}
+.accordion:hover {
+  background-color: #efefef;
+}
+.active:after {
+  content: "\2212";
+  color: #b000da;
+  font-weight: 700;
+  float: right;
+  margin-left: 5px;
+}
+.accordion:after {
+  content: "\002B";
+  color: #b000da;
+  font-weight: 700;
+  float: right;
+  margin-left: 5px;
+}
+.panel_on {
+  box-shadow: 0 3px 3px -4px rgba(0,0,0,.5);
+  margin-bottom: 10px;
+  width: 100%;
+  transition: .4s;
+  font-size: 14px;
+  font-style: italic;
+}
+.faq-answer{
+  padding: 20px;
+}
+.panel {
+  font-size: 14px;
+    font-style: italic;
+  background-color: #fff;
+  overflow: hidden;
+  max-height: 0;
+  transition: .4s;
+}
+
+.banner-h1 {
+  margin-top: 0;
+  font-size: 40px;
+  line-height: 45px;
+}
+.cta-sub-wr {
+  height: 200px;
+  max-width: 1200px;
+  justify-content: space-between;
+}
+.cta-sub-wr, .cta-wr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.bp-h1.black {
+  margin-top: 0;
+  font-size: 24px;
+}
+.cta-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.bp-h1, .bp-h1.black {
+  color: #000;
+  line-height: 30px;
+}
+.bp-h1 {
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.bp-h1.bp-h1-pink, .bp-h1.pink {
+  color: #c900fa;
+}
+.bp-h1.pink {
+  text-align: center;
+}
+.btn-cta {
+  background-color: #c900fa;
+}
+
+.bp-btn.bp-btn-pink.btn-cta {
+  margin-top: 20px;
+  background-color: #c900fa;
+  transition: background-color .3s ease;
+}
+.bp-btn.bp-btn-pink.bp-btn-apply {
+  background-position: 89% 50%;
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  box-shadow: 0 3px 30px 6px rgba(0,0,0,.1);
+  transition: background-color .2s ease;
+}
+.bp-h1.bp-h1-grey {
+  padding-right: 200px;
+  padding-left: 200px;
+  color: #5c5c5c;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 400;
+}
+.card-icon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.card-line {
+  width: 50%;
+  height: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 0;
+  background-color: #c900fa;
+}
+.card-header {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #000;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.card-para {
+  margin-bottom: 0;
+  padding-right: 5px;
+  padding-left: 5px;
+  color: #353535;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+  text-align: center;
+}
+.bp-text.bp-text-centered {
+  color: #5c5c5c;
+  font-weight: 400;
+  text-align: center;
 }
 @layer components {
   input[type="checkbox"]:checked ~ label span svg {
