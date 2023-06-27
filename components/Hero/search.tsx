@@ -2,7 +2,7 @@
 import AsyncSelect from 'react-select/async';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner, faCircleNotch } from '@fortawesome/free-solid-svg-icons'
-import Select from "react-select";
+import Select,{ components } from "react-select";
 import Image from "next/image";
 
 export interface ColourOption {
@@ -64,58 +64,73 @@ const SearchLocation = () => {
         }, 1000);
       };
       const customStyles = {
-        dropdownIndicator: (base:any) => ({
+        dropdownIndicator: (base: any) => ({
           ...base,
-          color: "red", // Custom colour
-         
+          display: "none", // Custom colour
         }),
-        indicatorSeparator: () => ({display:'none'}),
-        indicatorsContainer:()=>({
-            padding: "8px",
-            display:'flex'
+        indicatorSeparator: () => ({ display: "none" }),
+        indicatorsContainer: () => ({
+          padding: "8px",
+          display: "flex",
         }),
         control: (baseStyles, state) => ({
-            ...baseStyles,
-            outLine:'red',
-            boxShadow:'0 30px 35px -2px rgba(0,0,0,.15)',
-            border:'none',
-            height:'80px',
-            borderRadius: '10px',
-            // "&:hover": {
-            //     backgroundColor: '#e2e7ee',
-            //   }
-          }),
-          option:(baseStyles,state)=>({
-            ...baseStyles,
-            backgroundColor: state.isSelected ? '#d5d9de' : '',
-            "&:hover": {
-                backgroundColor: '#d5d9de',
-              }
+          ...baseStyles,
+          outLine: "red",
+          boxShadow: "0 30px 35px -2px rgba(0,0,0,.15)",
+          border: "none",
+          height: "80px",
+          borderRadius: "10px",
+        //   flexDirection: "row-reverse",
+          // "&:hover": {
+          //     backgroundColor: '#e2e7ee',
+          //   }
         }),
+        // option: (baseStyles, state) => ({
+        //   ...baseStyles,
+        //   backgroundColor: state.isSelected ? "#d5d9de" : "",
+        //   "&:hover": {
+        //     backgroundColor: "#d5d9de",
+        //   },
+        // }),
+        // clearIndicator: (base: any) => ({
+        //   ...base,
+        //   position: "absolute",
+        //   right: 0,
+        // }),
       };
-      const Placeholder = () => {
-        return (<>
-        Nhập tìm kiếm
-        </>);
+      const ClearIndicator = (props) => {
+        return (
+          <components.ClearIndicator {...props}>
+           <div className= "close-icon" ></div>
+           {/* <div className= "search-icon-wr" ></div> */}
+          </components.ClearIndicator>
+        );
+      };
+      const DropdownIndicator = (props) => {
+        return (
+          <components.DropdownIndicator {...props}>
+           <div className= "search-icon-wr" ></div>
+          </components.DropdownIndicator>
+        );
       };
     //   const CaretDownIcon = () => {
     //     return <FontAwesomeIcon icon="search" style={{padding: '10px'}}/>;
     //   };
+    // <div className={props.selectProps.isClearable ?'close-icon': 'search-icon-wr'} ></div>
     return (
       <>
         <section className="relative z-10 mt-[-40px]">
           <div className="container">
           <Select
-                defaultValue={options[0]}
+                // defaultValue={options[0]}
                 formatOptionLabel={formatOptionLabel}
                 options={options}
-                styles={customStyles}
+                // styles={customStyles}
                 isClearable
                 placeholder={"Enter your nationality to begin"}
             />
           </div>
         </section>
-       
       </>
     );
     }

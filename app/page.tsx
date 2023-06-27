@@ -20,15 +20,15 @@ export default function Home() {
       <ScrollUp />
       <Hero />
       <SearchLocation/>
-      <Features />
+      {/* <Features />
       <Video />
       <Brands />
       <AboutSectionOne />
       <AboutSectionTwo />
-      <Testimonials />
+      <Testimonials /> */}
       <Pricing />
-      <Blog />
-      <Contact />
+      {/* <Blog />
+      <Contact /> */}
     </>
   );
 }

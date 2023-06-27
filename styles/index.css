@@ -16,6 +16,24 @@
   background-repeat: no-repeat;
   height: 600px;
 }
+.search-icon-wr {
+  width: 40px;
+  height: 40px;
+  background-image: url('/images/hero/search-icon.d2c326c49a7b08793441.svg');
+  background-position: 50% 50%;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  transition: background-color .3s ease;
+}
+.close-icon{
+  width: 40px;
+  height: 40px;
+  background-image: url('/images/hero/close.3ac507e7c24f6e258055.svg');
+  background-position: 50% 50%;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  transition: background-color .3s ease;
+}
 @layer components {
   input[type="checkbox"]:checked ~ label span svg {
     @apply inline-flex;
