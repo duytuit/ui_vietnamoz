@@ -132,7 +132,7 @@ const Footer = () => {
                 <ul>
                   <li>
                     <a
-                      href="/"
+                      href="/about"
                       className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
                     >
                       About Us
@@ -140,7 +140,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="/"
+                      href="/terms"
                       className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
                     >
                       Term of use
@@ -148,7 +148,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="/"
+                      href="/privacy"
                       className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
                     >
                       Privacy Policy

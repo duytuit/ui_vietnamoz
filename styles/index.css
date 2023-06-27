@@ -67,7 +67,7 @@
     margin-bottom: 0;
     padding-bottom: 60px;
     border-top: 2px solid #c900fa;
-    background-color: #fff;
+    background-color: transparent;
 }
 
 .VietNam-time {
@@ -111,7 +111,12 @@
   -moz-user-select: none;
   user-select: none;
 }
-
+.default-content-line {
+  width: 200px;
+  height: 4px;
+  margin-top: 40px;
+  background-color: #ca00fa;
+}
 .bp-btn.btn-emergency {
   display: none;
   margin-top: 20px;
@@ -278,6 +283,24 @@
   color: #5c5c5c;
   font-weight: 400;
   text-align: center;
+}
+.default-h1 {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #bbb;
+  color: #1d68e9;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 400;
+  text-transform: none;
+}
+.paragraph {
+  color: #000;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: justify;
+  margin-bottom: 10px;
 }
 @layer components {
   input[type="checkbox"]:checked ~ label span svg {

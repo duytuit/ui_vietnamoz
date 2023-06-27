@@ -31,9 +31,9 @@ export interface ColourOption {
   // 	bigOptions = bigOptions.concat(colourOptions);
   // }
   const options = [
-    { value: "Abe", label: "Abe", customAbbreviation: "https://www.VietNamvisa.com/assets/flags/LC.svg" },
-    { value: "John", label: "John", customAbbreviation: "https://www.VietNamvisa.com/assets/flags/LC.svg" },
-    { value: "Dustin", label: "Dustin", customAbbreviation: "https://www.VietNamvisa.com/assets/flags/LC.svg" }
+    { value: "Abe", label: "Abe", customAbbreviation: "https://www.dubaivisa.com/assets/flags/LC.svg" },
+    { value: "John", label: "John", customAbbreviation: "https://www.dubaivisa.com/assets/flags/LC.svg" },
+    { value: "Dustin", label: "Dustin", customAbbreviation: "https://www.dubaivisa.com/assets/flags/LC.svg" }
   ];
   
   const formatOptionLabel = ({ value, label, customAbbreviation }) => (
@@ -120,7 +120,7 @@ const SearchLocation = () => {
     // <div className={props.selectProps.isClearable ?'close-icon': 'search-icon-wr'} ></div>
     return (
       <>
-        <section className="relative z-10 mt-[-40px]">
+        <section className="relative z-20 mt-[-40px]">
           <div className="container">
           <Select
                 // defaultValue={options[0]}
