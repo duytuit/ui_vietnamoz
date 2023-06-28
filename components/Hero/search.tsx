@@ -4,65 +4,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner, faCircleNotch } from '@fortawesome/free-solid-svg-icons'
 import Select,{ components } from "react-select";
 import Image from "next/image";
+import { countries } from '../Common/Utils/countries';
 
-export interface ColourOption {
-    readonly value: string;
-    readonly label: string;
-    readonly color: string;
-    readonly isFixed?: boolean;
-    readonly isDisabled?: boolean;
-  }
-  
-  export const colourOptions: readonly ColourOption[] = [
-    { value: 'ocean', label: "Ocean" , color: '#00B8D9', isFixed: true },
-    { value: 'blue', label: 'Blue', color: '#0052CC', isDisabled: true },
-    { value: 'purple', label: 'Purple', color: '#5243AA' },
-    { value: 'red', label: 'Red', color: '#FF5630', isFixed: true },
-    { value: 'orange', label: 'Orange', color: '#FF8B00' },
-    { value: 'yellow', label: 'Yellow', color: '#FFC400' },
-    { value: 'green', label: 'Green', color: '#36B37E' },
-    { value: 'forest', label: 'Forest', color: '#00875A' },
-    { value: 'slate', label: 'Slate', color: '#253858' },
-    { value: 'silver', label: 'Silver', color: '#666666' },
-  ];
-  
-  // let bigOptions = [];
-  // for (let i = 0; i < 10000; i++) {
-  // 	bigOptions = bigOptions.concat(colourOptions);
-  // }
-  const options = [
-    { value: "Abe", label: "Abe", customAbbreviation: "https://www.dubaivisa.com/assets/flags/LC.svg" },
-    { value: "John", label: "John", customAbbreviation: "https://www.dubaivisa.com/assets/flags/LC.svg" },
-    { value: "Dustin", label: "Dustin", customAbbreviation: "https://www.dubaivisa.com/assets/flags/LC.svg" }
-  ];
-  
-  const formatOptionLabel = ({ value, label, customAbbreviation }) => (
+  const formatOptionLabel = ({ value, label }) => (
     <div style={{ display: "flex"}}>
       <div style={{ marginLeft: "10px" }}>
         <Image
-        src= {customAbbreviation}
-        alt="author" width={40} height={40}
+        src= {`http://45.119.87.103:8090/upload/2023-06-29/${value}.svg`}
+        alt="author" width="40" height="40"
         />
       </div>
       <div style={{ marginLeft: "10px", display:'flex',alignItems:'center' }}>{label}</div>
     </div>
   );
-
 const SearchLocation = () => {
-    const filterColors = (inputValue: string) => {
-        return colourOptions.filter((i) =>
-          i.label.toLowerCase().includes(inputValue.toLowerCase())
-        );
-      };
-      
-      const loadOptions = (
-        inputValue: string,
-        callback: (options: ColourOption[]) => void
-      ) => {
-        setTimeout(() => {
-          callback(filterColors(inputValue));
-        }, 1000);
-      };
       const customStyles = {
         dropdownIndicator: (base: any) => ({
           ...base,
@@ -125,7 +80,7 @@ const SearchLocation = () => {
           <Select
                 // defaultValue={options[0]}
                 formatOptionLabel={formatOptionLabel}
-                options={options}
+                options={countries}
                 components={{ClearIndicator,DropdownIndicator}}
                 styles={customStyles}
                 isClearable

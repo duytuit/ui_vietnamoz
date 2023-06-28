@@ -1,6 +1,8 @@
-
 import { useEffect } from "react";
 import Accordion from "@/components/Common/Accordion";
+import { write } from "fs";
+import { title } from "process";
+import { get } from "http";
 
 const Faq = () => {
   return (
@@ -9,14 +11,15 @@ const Faq = () => {
       className="relative pb-[120px] pt-16 md:pt-20 lg:pt-28"
     >
       <div className="container">
-        <div className="mb-8 w-full md:mb-12 lg:mb-16 mt-20">
+        <div className="mb-8 mt-20 w-full md:mb-12 lg:mb-16">
           <h1 className="bp-h1 black dark:text-white">
             Everything you need to know about VN visas
           </h1>
-          <h1 className="bp-h1 bp-h1-grey flex justify-center">From VietNamvisa.com Team</h1>
+          <h1 className="bp-h1 bp-h1-grey flex justify-center">
+            From VietNamvisa.com Team
+          </h1>
         </div>
         <div className="content-wr">
-          <div className="empty-space-60"></div>
           <Accordion
             title="When should I apply for my VietNam Visa?"
             content="Ideally, you need to apply 30 to 40 days before your intended travel
@@ -61,7 +64,7 @@ const Faq = () => {
                 </div>
                 <div>Just wait and sip the coffee</div>"
           />
-           <Accordion
+          <Accordion
             title="How do I verify my visa online?"
             content="To verify your visa online just visit:
             <div>
@@ -74,7 +77,7 @@ const Faq = () => {
               <br/>
             </div>"
           />
-           <Accordion
+          <Accordion
             title="How many days will it take to get the VN Visa approval?"
             content=" Normal processing takes around 3 to 4 working days.
             <div>
@@ -111,45 +114,38 @@ const Faq = () => {
               <br />
             </div>"
           />
-          <div className="ng-star-inserted">
-            <button className="accordion" id="4">
-              What is the difference between Single Entry and Multiple Entry
-              VietNam Visa?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
-                Single Entry VietNam Visa is entitled to be used for 1 entry and 1
-                exit.
-                <div>
-                  <br />
-                </div>
-                <div>
-                  Multiple Entry VietNam Visa is entitled to use for as many
-                  entries and exits to/from VN from any airports.
-                </div>
-                <div>
-                  <br />
-                </div>
-                <div>
-                  To start your VietNam visa application now&nbsp;
-                  <a
-                    href='http://visavisa.net/'
-                    target="_blank"
-                    rel='noreferrer'
-                  >
-                    click here
-                  </a>
-                  <br />
-                </div>
-              </div>
+          <Accordion
+            title="What is the difference between Single Entry and Multiple Entry
+            VietNam Visa?"
+            content="Single Entry VietNam Visa is entitled to be used for 1 entry and 1
+            exit.
+            <div>
+              <br />
             </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="5">
+            <div>
+              Multiple Entry VietNam Visa is entitled to use for as many
+              entries and exits to/from VN from any airports.
+            </div>
+            <div>
+              <br />
+            </div>
+            <div>
+              To start your VietNam visa application now&nbsp;
+              <a
+                href='http://visavisa.net/'
+                target='blank'
+                rel='noreferrer'
+              >
+                click here
+              </a>
+              <br />
+            </div>"
+          />
+          <Accordion
+            title="
               Can I book my ticket before applying for VietNam visa?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 Yes, you can. However, its always smart to obtain your VN visa
                 approval in hand before making a purchase of non-refundable
                 flight tickets or hotel bookings.
@@ -160,24 +156,20 @@ const Faq = () => {
                   To start your VietNam visa application now&nbsp;
                   <a
                     href='http://visavisa.net/'
-                    target="_blank"
+                    target='blank'
                     rel='noreferrer'
                   >
                     click here
                   </a>
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="6">
+                  "
+          />
+          <Accordion
+            title="
               How can I track my VietNam Visa application status?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
-                Just visit&nbsp;
-                <a href="http://visavisa.net/track">
+            "
+            content="
+                Just visit &nbsp;
+                <a href='http://visavisa.net/track'>
                   http://visavisa.net/track
                 </a>
                 &nbsp;and enter your valid order reference.
@@ -185,25 +177,21 @@ const Faq = () => {
                   <br />
                 </div>
                 <div>
-                  To start your VietNam visa application now&nbsp;
+                  To start your VietNam visa application now &nbsp;
                   <a
                     href='http://visavisa.net/'
-                    target="_blank"
+                    target='_blank'
                     rel='noreferrer'
                   >
                     click here
                   </a>
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="7">
+                  "
+          />
+          <Accordion
+            title="
               My VN visa was not approved, will I get a Refund?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 Please be clear, that not a single government of any country in
                 the world makes a refund to the rejected visa applications be it
                 for any reason.
@@ -211,36 +199,30 @@ const Faq = () => {
                   <br />
                 </div>
                 <div>
-                  <span>To start your VietNam visa application now&nbsp;</span>
+                  <span>To start your VietNam visa application now </span>
                   <a
                     href='http://visavisa.net/'
-                    target="_blank"
+                    target='blank'
                     rel='noreferrer'
                   >
                     click here
                   </a>
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="8">
+                  "
+          />
+          <Accordion
+            title="
               Do infants and kids require to apply for a visa to enter into VN?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 All travelers (of any age) non-VN citizen or GCC nationals will
                 require a VN visa to enter the VN.
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="9">
+                "
+          />
+          <Accordion
+            title="
               Can I travel to Abu Dhabi with my VietNam Visa?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 Yes, you can travel to Abu Dhabi, VietNam, Sharjah, Ajman, Umm Al
                 Quwain, Ras Al Khaimah or even to Fujairah with your VietNam visa.
                 <div>
@@ -250,39 +232,33 @@ const Faq = () => {
                   <span>To start your VietNam visa application now&nbsp;</span>
                   <a
                     href='http://visavisa.net/'
-                    target="_blank"
+                    target='_blank'
                     rel='noreferrer'
                   >
                     click here
                   </a>
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="10">
+                  "
+          />
+          <Accordion
+            title="
               My Visa is approved, but I changed my mind to travel, can I get a
               refund?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 As per VN immigration rule, there are
                 <b>
                   <u>NO REFUNDS</u>
                 </b>
                 for any visa application that has been processed regardless it
                 is approved or rejected.
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="11">
+                "
+          />
+          <Accordion
+            title="
               Is it necessary for me to obtain a VN visa to enter VietNam?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
-                <div color="#1a2b49">
+            "
+            content="
+                <div >
                   <span>
                     VN Visa is mandatory for all non-VN citizens to travel to
                     the VN. It does not apply to the citizens of the GCC
@@ -292,7 +268,7 @@ const Faq = () => {
                 </div>
                 <br />
                 <div>
-                  <div color="#1a2b49">
+                  <div>
                     <span>
                       <br />
                     </span>
@@ -302,37 +278,33 @@ const Faq = () => {
                   To start your VietNam visa application now&nbsp;
                   <a
                     href='http://visavisa.net/'
-                    target="_blank"
+                    target='_blank'
                     rel='noreferrer'
                   >
                     <span>click here</span>
                   </a>
-                  <div color="#1a2b49">
+                  <div>
                     <span>
                       <br />
                     </span>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="12">
+                "
+          />
+          <Accordion
+            title="
               Can I take a flight with any airline?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 Yes, our VN visas have no such restrictions. The applicant can
                 travel with any airline they like.
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="13">
+             "
+          />
+          <Accordion
+            title="
               I dont have scanned copy of documents?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 No problem, you can take snaps from the mobile phone of your
                 passport (make sure there are no flashes or cropping of the
                 barcodes). The picture of the applicant can also be taken on a
@@ -345,137 +317,107 @@ const Faq = () => {
                   As long as the documents are clear and readable, you are good
                   to go.
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="14">
+             "
+          />
+          <Accordion
+            title="
               My visa is approved, but they are asking for more money?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 If youve clicked this, our sympathies are with you.&nbsp;
-                <div>
-                  <br />
-                </div>
+                <br />
                 <div>
                   You are just another victim that fell in their trap. Only if a
                   little effort of online research was done all this could have
                   been avoided.
                 </div>
-                <div>
-                  <br />
-                </div>
+                <br />
                 <div>
                   No dear, no one can help you at this time. You are just too
                   late to look for the right help now!
                   <br />
                 </div>
-                <div>
-                  <br />
-                </div>
+                <br />
                 <div>
                   At VietNamvisa.com we have a very strict policy of transparency.
                   We will never ask for extra money.
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="15">
+            "
+          />
+          <Accordion
+            title="
               Do I need to submit Flight Ticket and Hotel booking for my VietNam
               Visa approval?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 No, flight tickets and hotel bookings are not required for your
                 VN visa approval.
-                <div>
-                  <br />
-                </div>
+                <br />
                 <div>
                   To start your VietNam visa application now&nbsp;
                   <a
                     href='http://visavisa.net/'
-                    target="_blank"
+                    target='_blank'
                     rel='noreferrer'
                   >
                     click here
                   </a>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="16">
+             "
+          />
+          <Accordion
+            title="
               Can I get VietNam Visa approval within 12 hours?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 Yes, you can just&nbsp;
                 <a
-                  href="https://api.whatsapp.com/send?phone=971504378472"
-                  target="_blank"
+                  href='https://api.whatsapp.com/send?phone=971504378472'
+                  target='_blank'
                   rel='noreferrer'
                 >
                   click here
                 </a>
                 &nbsp;to know more about it
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="17">
+             "
+          />
+          <Accordion
+            title="
               I will be on transit to VietNam, will I need a VietNam Visa?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 Yes, you will need a VietNam visa if you will be going out of the
                 airport.
-                <div>
-                  <br />
-                </div>
-                <div>
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="18">
+            "
+          />
+          <Accordion
+            title="
               I am a Travel agent can I have contracted agency rates?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 Yes, you will need to write to us at sales@VietNamvisa.com
-                <div>
-                  <br />
-                </div>
+                <br />
                 <div>A corporate salesperson will attend to you.</div>
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="19">
+            "
+          />
+          <Accordion
+            title="
               GCC residents needs to apply VietNam Visa?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 <span>As of 29 April 2016,&nbsp;</span>
                 <span>GCC residence permit holders</span>
                 <span>
                   &nbsp;will need to apply for a VN visa before arriving in
                   VietNam.
                 </span>
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="20">
+            "
+          />
+          <Accordion
+            title="
               How can I trust VietNamvisa.com?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 The concern is valid for any online buyer. However,
                 VietNamvisa.com is backed by a legally registered entity World
                 Tours LLC since 2009 and is physically based in the heart of
@@ -499,8 +441,8 @@ const Faq = () => {
                 <div>
                   VietNamvisa.com is the name you can trust.&nbsp;
                   <a
-                    href="https://www.trustpilot.com/review/www.VietNamvisa.com"
-                    target="_blank"
+                    href='https://www.trustpilot.com/review/www.VietNamvisa.com'
+                    target='_blank'
                     rel='noreferrer'
                   >
                     Click here
@@ -513,23 +455,19 @@ const Faq = () => {
                 <div>
                   To start your VietNam visa application now&nbsp;
                   <a
-                    target="_blank"
+                    target='_blank'
                     href='http://visavisa.net/'
                     rel='noreferrer'
                   >
                     click here
                   </a>
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="21">
+                  "
+          />
+          <Accordion
+            title="
               Can my VietNam visa application be rejected?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 Rejections only occur if you have any one of the 2 following
                 conditions:
                 <div>
@@ -549,22 +487,16 @@ const Faq = () => {
                   <span>To start your VietNam visa application now&nbsp;</span>
                   <a
                     href='http://visavisa.net/'
-                    target="_blank"
+                    target='_blank'
                     rel='noreferrer'
                   >
                     click here
                   </a>
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="22">
-              How can I apply for a VietNam visa?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+                  "
+          />
+          <Accordion
+            title="How can I apply for a VietNam visa ?"
+            content="
                 <div>
                   <b>
                     Steps to <u>Apply</u> or to know the rates of the visa at
@@ -593,22 +525,18 @@ const Faq = () => {
                   To start your VietNam visa application now&nbsp;
                   <a
                     href='http://visavisa.net/'
-                    target="_blank"
+                    target='_blank'
                     rel='noreferrer'
                   >
                     <span>click here</span>
                   </a>
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="ng-star-inserted">
-            <button className="accordion" id="23">
+                  "
+          />
+          <Accordion
+            title="
               What is the minimum age required to apply for VietNam Visa?
-            </button>
-            <div className="panel">
-              <div className="faq-answer">
+            "
+            content="
                 An individual applicant must be of at least 18 years old to be
                 able to apply for their VN visa on a self basis. Any minor
                 (under the age of 18) will need to apply with their
@@ -620,17 +548,13 @@ const Faq = () => {
                   To start your VietNam visa application now&nbsp;
                   <a
                     href='http://visavisa.net/'
-                    target="_blank"
+                    target='_blank'
                     rel='noreferrer'
                   >
                     <span>click here</span>
                   </a>
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="empty-space-60"></div>
+                  "
+          />
         </div>
       </div>
     </section>

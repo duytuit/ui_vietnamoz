@@ -10,13 +10,13 @@ const Footer = () => {
         className="wow fadeInUp relative z-10 bg-opacity-5"
         data-wow-delay=".1s"
       >
-        <div className="emblem-wr">
+        <div className="emblem-wr mb-8">
           <div className="VietNam-visa-emblem"></div>
         </div>
         <div className="container">
           <div className="container mx-auto flex flex-wrap px-2 py-4">
             <div className="h-full p-4 xss:w-2/4 lg:w-1/4 lg:flex lg:justify-center lg:items-center">
-              <div className=" bg-gray-100 relative px-2 pt-16">
+              <div className=" bg-gray-100 relative px-2">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
                   Get in Touch
                 </h2>
@@ -57,7 +57,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="h-full p-4 xss:w-2/4 lg:w-1/4 lg:flex lg:justify-center lg:items-center">
-              <div className="bg-gray-100 relative px-2 pt-16">
+              <div className="bg-gray-100 relative px-2">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
                   Help & Support
                 </h2>
@@ -82,7 +82,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="h-full p-4 xss:w-2/4 lg:w-1/4 lg:flex lg:justify-center lg:items-center">
-              <div className="bg-gray-100 relative px-2 pt-16">
+              <div className="bg-gray-100 relative px-2">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
                   Hangout with Us
                 </h2>
@@ -123,7 +123,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="h-full p-4 xss:w-2/4 lg:w-1/4 lg:flex lg:justify-center lg:items-center">
-              <div className="bg-gray-100 relative px-2 pt-16">
+              <div className="bg-gray-100 relative px-2">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
                   About us
                 </h2>
@@ -165,7 +165,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="py-8">
+        <div className="pt-4 pb-8">
           <div className="container">
             <div className="cc-wrapper"></div>
             <div>

@@ -6,7 +6,7 @@ const Emblem = () => {
     <>
      <div className="ng-tns-c4-5 pt-16 md:pt-20 lg:pt-24">
           <div className="VietNam-time dark:text-black">
-            <div>VietNam Local Time - 1:18 PM</div>
+            <div className="ml-9">VietNam Local Time - 1:18 PM</div>
           </div>
           <div className="cta-wr dark:bg-black">
             <div className="bp-container">
