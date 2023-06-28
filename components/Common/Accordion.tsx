@@ -11,11 +11,11 @@ const Accordion=(props) =>{
   return (
     <>
        <div className="ng-star-inserted">
-            <button  className={`${isShowing ? "accordion_active active" : "accordion"}`} onClick={toggle}>
+            <button  className={`dark:text-white dark:bg-black ${isShowing ? "accordion_active active" : "accordion"}`} onClick={toggle}>
              {props.title}
             </button>
             <div className={`${isShowing ? "panel_on" : "panel"}`} >
-              <div className="faq-answer bg-white"  dangerouslySetInnerHTML={{__html: props.content}}>
+              <div className="faq-answer bg-white dark:text-black"  dangerouslySetInnerHTML={{__html: props.content}}>
               </div>
             </div>
           </div>

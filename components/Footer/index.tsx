@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
@@ -14,11 +14,11 @@ const Footer = () => {
           <div className="VietNam-visa-emblem"></div>
         </div>
         <div className="container">
-          <div className="flex w-full justify-between">
-            <div className="flex w-full flex-col items-center">
-              <div className="mb-12 lg:mb-16">
+          <div className="container mx-auto flex flex-wrap px-2 py-4">
+            <div className="h-full p-4 xss:w-2/4 lg:w-1/4 lg:flex lg:justify-center lg:items-center">
+              <div className=" bg-gray-100 relative px-2 pt-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
-                  Help & Support
+                  Get in Touch
                 </h2>
                 <ul>
                   <li>
@@ -56,8 +56,8 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="flex w-full flex-col items-center">
-              <div className="mb-12 lg:mb-16">
+            <div className="h-full p-4 xss:w-2/4 lg:w-1/4 lg:flex lg:justify-center lg:items-center">
+              <div className="bg-gray-100 relative px-2 pt-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
                   Help & Support
                 </h2>
@@ -81,9 +81,8 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-
-            <div className="flex w-full flex-col items-center">
-              <div className="mb-12 lg:mb-16">
+            <div className="h-full p-4 xss:w-2/4 lg:w-1/4 lg:flex lg:justify-center lg:items-center">
+              <div className="bg-gray-100 relative px-2 pt-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
                   Hangout with Us
                 </h2>
@@ -123,9 +122,8 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-
-            <div className="flex w-full flex-col items-center">
-              <div className="mb-12 lg:mb-16">
+            <div className="h-full p-4 xss:w-2/4 lg:w-1/4 lg:flex lg:justify-center lg:items-center">
+              <div className="bg-gray-100 relative px-2 pt-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
                   About us
                 </h2>

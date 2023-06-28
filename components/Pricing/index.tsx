@@ -11,12 +11,11 @@ const Pricing = () => {
   return (
     <section id="pricing" className="relative pt-16 md:pt-20 lg:pt-28">
       <div className="container">
-        <div className="mb-8 w-full md:mb-12 lg:mb-16">
-          <h1 className="bp-h1 black">
-            {" "}
+        <div className="mb-8 w-full md:mb-12 lg:mb-16 mt-20">
+          <h1 className="bp-h1 black dark:text-white">
             Apply for VietNam Visa with a peace of mind
           </h1>
-          <h1 className="bp-h1 bp-h1-grey">
+          <h1 className="bp-h1 bp-h1-grey flex justify-center dark:text-white">
             Application in minutes with 24/7 live customer support
           </h1>
         </div>
@@ -36,12 +35,12 @@ const Pricing = () => {
                 height={80}
                 className="mb-8"
               />
-              <h1 className="card-header">
+              <h1 className="card-header dark:text-white">
                 Apply Online <br />
                 with Most Secure System
               </h1>
               <div className="card-line"></div>
-              <p className="card-para">
+              <p className="card-para dark:text-white">
                 We make it super simple and extra secure to apply for your VN
                 visa online. Taking your privacy seriously, the data processing
                 is encrypted with industry-leading 256-bit encryption.
@@ -62,13 +61,13 @@ const Pricing = () => {
                 height={80}
                 className="mb-8"
               />
-              <h1 className="card-header">
+              <h1 className="card-header dark:text-white">
                 Exceptional Customer Care
                 <br />
                 24x7
               </h1>
               <div className="card-line"></div>
-              <p className="card-para">
+              <p className="card-para dark:text-white">
                 Our team is always available online to assist with all your
                 questions related to VN visa services. You will be guided on
                 every single step of your VietNam Visa application.
@@ -89,13 +88,13 @@ const Pricing = () => {
                 height={80}
                 className="mb-8"
               />
-              <h1 className="card-header">
+              <h1 className="card-header dark:text-white">
                 Express Service
                 <br />
                 within 12 hours
               </h1>
               <div className="card-line"></div>
-              <p className="card-para">
+              <p className="card-para dark:text-white">
                 Forgot to apply for your visa? Worry no more, just apply your
                 VietNam visa application with our Express Service and get the
                 approval in the next 12 hours*

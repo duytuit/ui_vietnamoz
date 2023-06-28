@@ -10,16 +10,14 @@ const Contact = () => {
   return (
     <section id="pricing" className="relative pt-16 md:pt-20 lg:pt-28">
       <div className="container">
-        <div className="mb-8 w-full md:mb-12 lg:mb-16">
-          <h1 className="bp-h1 black">
-            Get in touch
-          </h1>
-          <h1 className="bp-h1 bp-h1-grey">
-          Reach out to our multilingual and friendly team.
+        <div className="mb-8 w-full md:mb-12 lg:mb-16 mt-20">
+          <h1 className="bp-h1 black dark:text-white">Get in touch</h1>
+          <h1 className="bp-h1 bp-h1-grey flex justify-center">
+            Reach out to our multilingual and friendly team.
           </h1>
         </div>
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3 mb-20">
+        <div className="mb-20 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
           <PricingBox
             packageName="Lite"
             price={isMonthly ? "40" : "120"}
@@ -34,15 +32,14 @@ const Contact = () => {
                 height={80}
                 className="mb-8"
               />
-              <h1 className="card-header">
-              Frequently asked
- <br />
- questions
+              <h1 className="card-header dark:text-white">
+                Frequently asked
+                <br />
+                questions
               </h1>
               <div className="card-line"></div>
-              <p className="card-para">
-              Advice and answers
-from our team
+              <p className="card-para dark:text-white">
+                Advice and answers from our team
               </p>
             </div>
           </PricingBox>
@@ -60,16 +57,14 @@ from our team
                 height={80}
                 className="mb-8"
               />
-              <h1 className="card-header">
-              Email
-
+              <h1 className="card-header dark:text-white">
+                Email
                 <br />
                 us
               </h1>
               <div className="card-line"></div>
-              <p className="card-para">
-              Sales and support
-related queries
+              <p className="card-para dark:text-white">
+                Sales and support related queries
               </p>
             </div>
           </PricingBox>
@@ -87,17 +82,13 @@ related queries
                 height={80}
                 className="mb-8"
               />
-              <h1 className="card-header">
-              connect with
-
+              <h1 className="card-header dark:text-white">
+                connect with
                 <br />
                 whatsapp
               </h1>
               <div className="card-line"></div>
-              <p className="card-para">
-              Send us a message
-now
-              </p>
+              <p className="card-para dark:text-white">Send us a message now</p>
             </div>
           </PricingBox>
           <PricingBox
@@ -114,15 +105,14 @@ now
                 height={80}
                 className="mb-8"
               />
-              <h1 className="card-header">
-              Live
-<br />
-Chat 
+              <h1 className="card-header dark:text-white">
+                Live
+                <br />
+                Chat
               </h1>
               <div className="card-line"></div>
-              <p className="card-para">
-              Start a live chat
-with our team
+              <p className="card-para dark:text-white">
+                Start a live chat with our team
               </p>
             </div>
           </PricingBox>
@@ -140,16 +130,13 @@ with our team
                 height={80}
                 className="mb-8"
               />
-              <h1 className="card-header">
-              Call us
-
+              <h1 className="card-header dark:text-white">
+                Call us
                 <br />
                 directly
               </h1>
               <div className="card-line"></div>
-              <p className="card-para">
-              +971 55 4773230
-              </p>
+              <p className="card-para dark:text-white">+971 55 4773230</p>
             </div>
           </PricingBox>
           <PricingBox
@@ -166,16 +153,13 @@ with our team
                 height={80}
                 className="mb-8"
               />
-              <h1 className="card-header">
-              Travel agents
-
+              <h1 className="card-header dark:text-white">
+                Travel agents
                 <br />
                 and corporate
               </h1>
               <div className="card-line"></div>
-              <p className="card-para">
-              +971 55 4773230
-              </p>
+              <p className="card-para dark:text-white">+971 55 4773230</p>
               <a href="mailto:sales@VietNamvisa.com">sales@VietNamvisa.com</a>
             </div>
           </PricingBox>
@@ -193,15 +177,14 @@ with our team
                 height={80}
                 className="mb-8"
               />
-              <h1 className="card-header">
-              Offices
+              <h1 className="card-header dark:text-white">
+                Offices
                 <br />
                 Address
               </h1>
               <div className="card-line"></div>
-              <p className="card-para">
-              501 VietNam Insurance Building
-Al Rigga Road
+              <p className="card-para dark:text-white">
+                501 VietNam Insurance Building Al Rigga Road
               </p>
             </div>
           </PricingBox>

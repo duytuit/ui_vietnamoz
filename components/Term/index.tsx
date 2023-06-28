@@ -9,9 +9,9 @@ const Term = () => {
   return (
     <section id="pricing" className="relative pt-16 md:pt-20 lg:pt-28">
       <div className="container">
-        <div className="mb-8 w-full md:mb-12 lg:mb-16">
-          <h1 className="bp-h1 black">Terms of Use</h1>
-          <h1 className="bp-h1 bp-h1-grey">
+        <div className="mb-8 w-full md:mb-12 lg:mb-16 mt-20">
+          <h1 className="bp-h1 black dark:text-white">Terms of Use</h1>
+          <h1 className="bp-h1 bp-h1-grey flex justify-center">
           Please read these terms and conditions of service before using VietNamvisa.com
           </h1>
           <div className="flex justify-center">
@@ -19,7 +19,7 @@ const Term = () => {
           </div>
         </div>
         <div className="mb-8 w-full md:mb-12 lg:mb-16">
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             <strong>
               BY USING THIS SITE, BY SENDING OR DELIVERING YOUR PASSPORT(S),
               APPLICATION(S), OTHER DOCUMENT(S) TO VietNamVisa.com YOU ACKNOWLEDGE
@@ -27,7 +27,7 @@ const Term = () => {
               TO VIOLATE OUR POLICIES.
             </strong>
           </p>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             By using this site, you convey your agreement with these Terms &amp;
             Conditions and the Privacy Statement. If you do not agree with the
             terms stated in this agreement or are dissatisfied with the site
@@ -39,7 +39,7 @@ const Term = () => {
             site.{" "}
           </p>
           <h1 className="default-h1">Refund Policy</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             If you cancel the service you may be entitled to a refund. If your
             passport and other supporting documents were received by
             VietNamVisa.com and have already been submitted by VietNamVisa.com for
@@ -57,7 +57,7 @@ const Term = () => {
             processed, rejected or approved applications.{" "}
           </p>
           <h1 className="default-h1">Processing Time</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             Processing time for visas and passports quoted by VietNamVisa.com are
             approximate and based on processing times provided by the
             immigration department of VN under normal circumstances. Processing
@@ -71,7 +71,7 @@ const Term = () => {
             visa applications. <br />
           </p>
           <h1 className="default-h1">Fees and Payments</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             You agree that your credit card(s) will be billed immediately after
             online verification takes place. You agree to pay all fees and
             charges for any products or services offered for sale by
@@ -83,12 +83,12 @@ const Term = () => {
             which are subject to change without notice. <br />
           </p>
           <h1 className="default-h1">Shipping / Sending of Visa</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             All approved visas will be sent via email. Visas will only be sent
             once the payment for the same has been received in full. <br />
           </p>
           <h1 className="default-h1">Service Description</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             VietNamvisa.com does its best to correctly describe all services that
             appear on the website. However, VietNamvisa.com does not warrant that
             all the statements, definitions, and descriptions are most current,
@@ -103,7 +103,7 @@ const Term = () => {
             VietNamvisa.com website. <br />
           </p>
           <h1 className="default-h1">Service</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             Requirements and fees related to the processing of visa applications
             are subject to change without notice. Passports and additional
             documents required for visa issuance are subject to change without
@@ -120,7 +120,7 @@ const Term = () => {
             circumstances. <br />
           </p>
           <h1 className="default-h1">Communication</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             By using this site and our services you give VietNamvisa.com your
             express permission to contact you via email, messaging, or other
             electronic or non-electronic forms of communication for all purposes
@@ -128,7 +128,7 @@ const Term = () => {
             <br />
           </p>
           <h1 className="default-h1">Security</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             By submitting registration and application forms, you certify that
             the information you provide is true and correct. You are responsible
             for maintaining the confidentiality of your User ID (login) and
@@ -139,7 +139,7 @@ const Term = () => {
             governs submitted &amp; distributed information. <br />
           </p>
           <h1 className="default-h1">Intellectual Property</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             This Web site, including but not limited to text, content,
             photographs, graphics, software applications, is protected as a
             collective work by copyrights, trademarks, service marks,
@@ -157,7 +157,7 @@ const Term = () => {
             owners. <br />
           </p>
           <h1 className="default-h1">Copyrightes and Trademark Compliance</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             This Web site, including but not limited to text, content,
             photographs, graphics, software applications, is protected as a
             collective work by copyrights, trademarks, service marks,
@@ -175,7 +175,7 @@ const Term = () => {
             owners. <br />
           </p>
           <h1 className="default-h1">Indemnification</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             You shall indemnify, hold and save harmless, and defend at your own
             expense VietNamvisa.com, its officers, directors, agents, and
             employees from and against all suits, claims, demands and liability
@@ -192,7 +192,7 @@ const Term = () => {
             action. <br />
           </p>
           <h1 className="default-h1">Termination</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             You agree that VietNamvisa.com shall have the right to terminate your
             ability to access this site at any time without notice and you that
             will not hold VietNamvisa.com responsible or liable for any damages
@@ -202,7 +202,7 @@ const Term = () => {
             circumstances. <br />
           </p>
           <h1 className="default-h1">Links</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             This web site contains links to third-party Web sites. These links
             are provided exclusively for information purposes and to assist in
             locating other Internet resources. We are not responsible for the
@@ -211,7 +211,7 @@ const Term = () => {
             linked site. <br />
           </p>
           <h1 className="default-h1">Restriction on Use</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             This site is intended for use by adult individuals over 18 years of
             age. It may not be used for any illegal purpose or in any manner
             inconsistent with these Terms &amp; Conditions. You may not use this
@@ -233,7 +233,7 @@ const Term = () => {
             WRITTEN CONSENT OF VietNamvisa.com. <br />
           </p>
           <h1 className="default-h1">Disclamer</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             All the information on this web site is provided as is and without
             warranties, expressed or implied, as to the accuracy or completeness
             of the information, fitness for a particular use or purpose,
@@ -259,7 +259,7 @@ const Term = () => {
             to this web site. <br />
           </p>
           <h1 className="default-h1">Entire Agreement</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             This agreement along with the Privacy Statement constitute the
             entire agreement between you and VietNamvisa.com and supersedes any
             and all prior agreements, statements or representations regarding

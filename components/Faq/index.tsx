@@ -9,11 +9,11 @@ const Faq = () => {
       className="relative pb-[120px] pt-16 md:pt-20 lg:pt-28"
     >
       <div className="container">
-        <div className="mb-8 w-full md:mb-12 lg:mb-16">
-          <h1 className="bp-h1 black">
+        <div className="mb-8 w-full md:mb-12 lg:mb-16 mt-20">
+          <h1 className="bp-h1 black dark:text-white">
             Everything you need to know about VN visas
           </h1>
-          <h1 className="bp-h1 bp-h1-grey">From VietNamvisa.com Team</h1>
+          <h1 className="bp-h1 bp-h1-grey flex justify-center">From VietNamvisa.com Team</h1>
         </div>
         <div className="content-wr">
           <div className="empty-space-60"></div>

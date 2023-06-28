@@ -10,9 +10,9 @@ const About = () => {
   return (
     <section id="pricing" className="relative pt-16 md:pt-20 lg:pt-28">
       <div className="container">
-        <div className="mb-8 w-full md:mb-12 lg:mb-16">
-          <h1 className="bp-h1 black">About VietNamvisa.com</h1>
-          <h1 className="bp-h1 bp-h1-grey">
+        <div className="mb-8 w-full md:mb-12 lg:mb-16 mt-20">
+          <h1 className="bp-h1 black dark:text-white">About VietNamvisa.com</h1>
+          <h1 className="bp-h1 bp-h1-grey flex justify-center ">
           Our mission is to build the future of Travel & Toursim.
           </h1>
           <div className="flex justify-center">
@@ -20,7 +20,7 @@ const About = () => {
           </div>
         </div>
         <div className="mb-8 w-full md:mb-12 lg:mb-16">
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             Fast, secure and transparent - we’ll take care of your visas needs.
             Using a unique combination of cutting edge technology and visa
             experts, travellers can be sure they are getting the best experience

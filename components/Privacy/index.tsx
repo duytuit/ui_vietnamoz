@@ -5,9 +5,9 @@ const Privacy = () => {
   return (
     <section id="pricing" className="relative pt-16 md:pt-20 lg:pt-28">
       <div className="container">
-        <div className="mb-8 w-full md:mb-12 lg:mb-16">
-          <h1 className="bp-h1 black">Privacy Policy</h1>
-          <h1 className="bp-h1 bp-h1-grey">
+        <div className="mb-8 w-full md:mb-12 lg:mb-16 mt-20">
+          <h1 className="bp-h1 black dark:text-white">Privacy Policy</h1>
+          <h1 className="bp-h1 bp-h1-grey flex justify-center">
               Protecting and preserving the privacy of our users
           </h1>
           <div className="flex justify-center">
@@ -15,7 +15,7 @@ const Privacy = () => {
           </div>
         </div>
         <div className="mb-8 w-full md:mb-12 lg:mb-16">
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             It is the policy of VietNamvisa.com to protect and preserve the
             privacy of its users and customers, and the confidentiality of the
             information they provide, subject to conditions described below. To
@@ -33,7 +33,7 @@ const Privacy = () => {
             modify this Statement at any time.
           </p>
           <h1 className="default-h1">1. Security</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             VietNamvisa.com is committed to providing the highest level of
             security and privacy. All transactions of user authentication
             including credit cards processing are conducted using SSL (Secure
@@ -47,7 +47,7 @@ const Privacy = () => {
             purposes for which it has been gathered.
           </p>
           <h1 className="default-h1">2. Information</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             We take measures to ensure that the information you provide is
             recorded accurately and completely. We provide you with access to
             your personal information at all times for correcting or modifying
@@ -127,7 +127,7 @@ const Privacy = () => {
             <br />
           </p>
           <h1 className="default-h1">3. Discalmer</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             Communication over the Internet as well as applications used to
             provide services over the Internet are subject to various security
             risks. In no event shall VietNamvisa.com be responsible for any
@@ -154,7 +154,7 @@ const Privacy = () => {
             <br />
           </p>
           <h1 className="default-h1">4. Summary</h1>
-          <p className="paragraph">
+          <p className="paragraph dark:text-white">
             By accessing this site and using its services, you unconditionally
             agree with the terms of this Privacy Statement and our Terms &amp;
             Conditions. You agree to comply with the terms that govern the use
