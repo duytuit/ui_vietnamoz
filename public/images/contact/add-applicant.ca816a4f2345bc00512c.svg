@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="86" height="78" viewBox="0 0 86 78">
+  <g id="Group_4338" data-name="Group 4338" transform="translate(-576 -572)">
+    <g id="Person" transform="translate(576 572)">
+      <g id="Group_4206" data-name="Group 4206" transform="translate(0)">
+        <g id="Ellipse_3" data-name="Ellipse 3" transform="translate(0)" fill="#fff" stroke="#dc4bff" stroke-width="2">
+          <circle cx="39" cy="39" r="39" stroke="none"/>
+          <circle cx="39" cy="39" r="38" fill="none"/>
+        </g>
+        <g id="add-mentor-icon" transform="translate(18.712 23.922)">
+          <path id="path" d="M13.464,13.6v7.779L.5,27.342" transform="translate(-0.5 20.366)" fill="none" stroke="#dc4bff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+          <path id="path-2" data-name="path" d="M13.4,17.5" transform="translate(20.048 26.578)" fill="none" stroke="#dc4bff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+          <path id="path-3" data-name="path" d="M13.1,17.4" transform="translate(19.57 26.419)" fill="none" stroke="#dc4bff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+          <path id="path-4" data-name="path" d="M11.3,13.6V24.449l11.533,2.893" transform="translate(16.703 20.366)" fill="none" stroke="#dc4bff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+          <path id="path-5" data-name="path" d="M21.35,35.763a13.494,13.494,0,0,0,9.075-12.7V11.131A10.515,10.515,0,0,0,19.794.5H13.831A10.515,10.515,0,0,0,3.2,11.131V23.058a13.494,13.494,0,0,0,9.075,12.7" transform="translate(3.801 -0.5)" fill="none" stroke="#dc4bff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+    <circle id="Ellipse_21" data-name="Ellipse 21" cx="13.5" cy="13.5" r="13.5" transform="translate(635 615)" fill="#dc4bff"/>
+    <g id="add" transform="translate(643.18 622.95)">
+      <path id="Path_2446" data-name="Path 2446" d="M17.216,11.98H11.98v5.235H10.235V11.98H5V10.235h5.235V5H11.98v5.235h5.235Z" transform="translate(-5 -5)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

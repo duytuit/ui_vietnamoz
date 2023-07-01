@@ -4,10 +4,11 @@ import SectionTitle from "../Common/SectionTitle";
 import OfferList from "./OfferList";
 import PricingBox from "./PricingBox";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 
 const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
-
+  const searchParams = useSearchParams()
   return (
     <section id="pricing" className="relative pt-16 md:pt-20 lg:pt-28">
       <div className="container">

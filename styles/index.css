@@ -301,6 +301,98 @@
   text-align: justify;
   margin-bottom: 10px;
 }
+input.ng-invalid.ng-touched {
+  border-width: 2px;
+  border-color: #ca00fa;
+  box-shadow: 0 2px 10px -3px #dc4bff;
+}
+.input-field.input-email {
+  background-image: url(/images/contact/email-2.594a86e569f3bb364788.svg);
+  background-position: 1% 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+.input-field.input-email:focus {
+  border-color: #d1d1d1;
+}
+.input-field:focus {
+  box-shadow: 0 1px 5px -1px rgba(220,75,255,.65);
+}
+
+.w-input:focus, .w-select:focus {
+  border-color: #3898ec;
+  outline: 0;
+}
+.input-field {
+  height: 65px;
+  margin-bottom: 10px;
+  padding-left: 50px;
+  border: 0 solid #000;
+  background-position: 96% 50%;
+  background-size: 7px;
+  background-repeat: no-repeat;
+  box-shadow: -1px 6px 4px -6px rgba(0,0,0,.5);
+  font-size: 14px;
+  font-weight: 400;
+  outline-style: none;
+}
+.w-input, .w-select {
+  display: block;
+  width: 100%;
+  height: 38px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+.checkbox-container {
+  display: flex;
+  margin-top: 10px;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+input[type=checkbox]+label:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c900fa;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: all .12s,border-color .08s;
+}
+input[type=checkbox]+label:last-child {
+  margin-bottom: 0;
+}
+input[type=checkbox]+label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #3b3b3b;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+input[type=checkbox]:checked+label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(45deg);
+}
 @layer components {
   input[type="checkbox"]:checked ~ label span svg {
     @apply inline-flex;

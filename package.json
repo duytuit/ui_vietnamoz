@@ -14,6 +14,9 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@next/font": "13.1.6",
+    "@tanstack/react-query": "^4.29.19",
+    "@tanstack/react-query-devtools": "^4.29.19",
+    "@unform/web": "^2.1.6",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "next": "13.1.6",
@@ -22,9 +25,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-modal-video": "^2.0.0",
+    "react-query-kit": "^1.4.5",
     "react-select": "^5.7.3"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^4.29.9",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.34",
     "autoprefixer": "^10.4.13",
