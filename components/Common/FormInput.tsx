@@ -60,7 +60,7 @@ const FormInput = (props) => {
     <div className="w-full mb-2 relative">
       <div className="w-full">
         <InputText
-          className={classNames("w-full mb-1 input-field input-email", className, { 'ng-invalid ng-touched': error })}
+          className={classNames("w-full mb-1 input-field input-email dark:bg-[#16215b]", className, { 'ng-invalid ng-touched': error })}
           {...inputProps}
           id={id}
           type={type === 'phone' ? 'number' : type}
