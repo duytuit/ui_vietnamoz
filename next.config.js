@@ -3,13 +3,13 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  webpack: (config, options) => {
-    config.externals.push({
-      'react-hook-form': 'react-hook-form',
-    });
+  // webpack: (config, options) => {
+  //   config.externals.push({
+  //     'react-hook-form': 'react-hook-form',
+  //   });
 
-    return config;
-  },
+  //   return config;
+  // },
 };
 
 module.exports = nextConfig;
