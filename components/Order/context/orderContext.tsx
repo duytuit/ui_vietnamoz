@@ -22,9 +22,9 @@ const orderContextDefaultValues: ContextOrderType = {
   setFormOrderValues: () => {},
   order: null,
 };
-export const OrderContext = createContext<ContextOrderType>(orderContextDefaultValues);
+export const orderContext = createContext<ContextOrderType>(orderContextDefaultValues);
 
-const orderProvider=({children}) =>{
+const OrderProvider=({children}) =>{
 
   const [orders, setOrders] = useState<Iorder[]>([]);
 
@@ -57,10 +57,10 @@ const orderProvider=({children}) =>{
   };
 
   return (
-    <OrderContext.Provider value={{ order,orders, saveOrder, updateOrder,setFormOrderValues }}>
+    <orderContext.Provider value={{ order,orders, saveOrder, updateOrder,setFormOrderValues }}>
       {children}
-    </OrderContext.Provider>
+    </orderContext.Provider>
   );
 }
-export default orderProvider;
-export const useOder = () => useContext(OrderContext);
+export default OrderProvider;
+export const useOder = () => useContext(orderContext) as ContextOrderType;
