@@ -63,4 +63,4 @@ const orderProvider=({children}) =>{
   );
 }
 export default orderProvider;
-export const useOder = () => useContext(OrderContext) as ContextOrderType;
+export const useOder = () => useContext(OrderContext);
