@@ -5,6 +5,9 @@ import { faSpinner, faCircleNotch } from '@fortawesome/free-solid-svg-icons'
 import Select,{ components } from "react-select";
 import Image from "next/image";
 import { countries } from '../Common/Utils/countries';
+import Order from '../Order';
+import ProductList from '../Order/ProductList';
+import { useState } from 'react';
 
   const formatOptionLabel = ({ value, label }) => (
     <div style={{ display: "flex"}}>
@@ -18,6 +21,7 @@ import { countries } from '../Common/Utils/countries';
     </div>
   );
 const SearchLocation = () => {
+  const [country, setCountry] = useState('');
       const customStyles = {
         dropdownIndicator: (base: any) => ({
           ...base,
@@ -78,7 +82,6 @@ const SearchLocation = () => {
         <section className="relative z-20 mt-[-40px]">
           <div className="container">
           <Select
-                // defaultValue={options[0]}
                 formatOptionLabel={formatOptionLabel}
                 options={countries}
                 components={{ClearIndicator,DropdownIndicator}}
@@ -86,7 +89,9 @@ const SearchLocation = () => {
                 isClearable
                 placeholder={"Enter your nationality to begin"}
             />
+         <ProductList country={country}/>
           </div>
+           
         </section>
       </>
     );

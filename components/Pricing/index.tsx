@@ -10,7 +10,7 @@ const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
   const searchParams = useSearchParams()
   return (
-    <section id="pricing" className="relative pt-16 md:pt-20 lg:pt-28">
+    <section id="pricing" className="relative pt-8 md:pt-8 lg:pt-8">
       <div className="container">
         <div className="mb-8 w-full md:mb-12 lg:mb-16 mt-20">
           <h1 className="bp-h1 black dark:text-white">

@@ -9,6 +9,7 @@ import Emblem from "@/components/Footer/emblem";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import SearchLocation from "@/components/Hero/search";
+import Order from "@/components/Order";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import Video from "@/components/Video";

@@ -4,7 +4,7 @@ const FormOrder =({ children, currentStep, prevFormStep })=> {
     <div >
       {currentStep < 3 && (
         <>
-          {currentStep > 0 && (
+          {/* {currentStep > 0 && (
             <button
              
               onClick={prevFormStep}
@@ -12,9 +12,8 @@ const FormOrder =({ children, currentStep, prevFormStep })=> {
             >
               back
             </button>
-          )}
-
-          <span>Step {currentStep + 1} of 3</span>
+          )} */}
+          {/* <span>Step {currentStep + 1} of 3</span> */}
         </>
       )}
       {children}
