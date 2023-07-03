@@ -632,7 +632,6 @@ input:checked+.switcher__indicator:after {
   user-select: none;
   position: relative;
   display: flex;
-  width: 28%;
   height: 400px;
   margin-right: 5px;
   margin-bottom: 10px;
