@@ -303,7 +303,7 @@ input.ng-invalid.ng-touched {
 }
 .input-field.input-email {
   background-image: url(/images/contact/email-2.594a86e569f3bb364788.svg);
-  background-position: 1% 50%;
+  background-position: 2% 50%;
   background-size: 20px;
   background-repeat: no-repeat;
 }
@@ -792,7 +792,13 @@ input:checked+.switcher__indicator:after {
   margin-left: 5px;
 }
 .card-icon-modal.details {
-  /* background-image: url(details.2b31256….svg); */
+  background-image: url(/images/contact/details.2b3125637e69bdc33d36.svg);
+  background-position: 50% 50%;
+  background-size: contain;
+}
+.card-icon-modal.national-id {
+  margin-bottom: 0;
+  background-image: url(/images/contact/id.e5db71fc6eb3e552ee8a.svg);
   background-position: 50% 50%;
   background-size: contain;
 }
@@ -1292,6 +1298,54 @@ input:checked+.switcher__indicator:after {
   padding: 40px 20px;
   justify-content: center;
   flex: 0 0 auto;
+}
+.input-field.input-contact {
+  background-image: url(/images/contact/contact.fcdf7d858c5c6e78c933.svg);
+  background-position: 3% 50%;
+  background-size: 20px,7px;
+  background-repeat: no-repeat,no-repeat;
+}
+.input-field.input-person {
+  background-image: url(/images/contact/user.7e61301bb42f00bcf425.svg);
+  background-position: 3% 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+.input-field.input-nationality {
+  background-image: url(/images/contact/flag.ec610d18d58d262680b1.svg);
+  background-position: 3% 50%;
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+.input-field.input-passport {
+  background-image: url(/images/contact/passport.cc0dc9e3f0c8c4b27671.svg);
+  background-position: 3% 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+.input-field.input-calendar {
+  background-image: url(/images/contact/calendar.9a6a4a804cc0dd23a1f7.svg);
+  background-position: 3% 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+.input-field.input-country {
+  background-image: url(/images/contact/earth.e3f93dadb60ef904e783.svg);
+  background-position: 3% 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+.input-field.input-work {
+  background-image: url(/images/contact/work.3970d5f95b043e264a39.svg);
+  background-position: 3% 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+
+.input-field.input-bag {
+  background-image: url(/images/contact/bag.5e940f1ddca17668ed48.svg);
+  background-position: 3% 50%;
+  background-size: 20px;
 }
 @media (min-width: 640px) {
   table {
