@@ -33,8 +33,8 @@ const Step4=({ formStep, nextFormStep })=> {
     // </div>
     <>
           <div className={`${formStep === 3 ? 'block' : 'hidden'}`}>
-            <div className="app-modal-body-header">
-              <h1 className="modal-applicant-header">
+            <div className="app-modal-body-header xss:flex-col lg:flex-row">
+              <h1 className="modal-applicant-header xss:py-3 lg:py-0">
                 confirm or edit your order
               </h1>
               <h1 className="header-left">

@@ -17,29 +17,29 @@ const Order = () => {
     <section className="relative pt-6 md:pt-6 lg:pt-6">
       <div className="container">
         <div className="mb-8 mt-20 w-full md:mb-12 lg:mb-16">
-          <section className="step-indicator">
+          <section className="step-indicator xss:p-0">
             <div className={`step step1 ${formStep>=0 ? 'active_bar':''}`}>
-              <div className="step-icon">1</div>
+              <div className="step-icon xss:!w-[40px] xss:!h-[40px] xss:!text-[18px] xss:!leading-[42px] lg:!w-[50px] lg:!h-[50px]  lg:!text-[20px] lg:!leading-[50px]">1</div>
               <p>Delivery</p>
             </div>
             <div className={`indicator-line ${formStep>=0 ? 'active_bar':''}`}></div>
             <div className={`step step2 ${formStep>=1 ? 'active_bar':''}`}>
-              <div className="step-icon">2</div>
+              <div className="step-icon xss:!w-[40px] xss:!h-[40px] xss:!text-[18px] xss:!leading-[42px] lg:!w-[50px] lg:!h-[50px]  lg:!text-[20px] lg:!leading-[50px]">2</div>
               <p>Payment</p>
             </div>
             <div className={`indicator-line ${formStep>=1 ? 'active_bar':''}`}></div>
             <div className={`step step3 ${formStep>=2 ? 'active_bar':''}`}>
-              <div className="step-icon">3</div>
+              <div className="step-icon xss:!w-[40px] xss:!h-[40px] xss:!text-[18px] xss:!leading-[42px] lg:!w-[50px] lg:!h-[50px]  lg:!text-[20px] lg:!leading-[50px]">3</div>
               <p>Confirmation</p>
             </div>
             <div className={`indicator-line ${formStep>=2 ? 'active_bar':''}`}></div>
             <div className={`step step4 ${formStep>=3 ? 'active_bar':''}`}>
-              <div className="step-icon">4</div>
+              <div className="step-icon xss:!w-[40px] xss:!h-[40px] xss:!text-[18px] xss:!leading-[42px] lg:!w-[50px] lg:!h-[50px]  lg:!text-[20px] lg:!leading-[50px]">4</div>
               <p>Delivery</p>
             </div>
             <div className={`indicator-line ${formStep>=3 ? 'active_bar':''}`}></div>
             <div className={`step step5 ${formStep>=4 ? 'active_bar':''}`}>
-              <div className="step-icon">5</div>
+              <div className="step-icon xss:!w-[40px] xss:!h-[40px] xss:!text-[18px] xss:!leading-[42px] lg:!w-[50px] lg:!h-[50px]  lg:!text-[20px] lg:!leading-[50px]">5</div>
               <p>Payment</p>
             </div>
           </section>

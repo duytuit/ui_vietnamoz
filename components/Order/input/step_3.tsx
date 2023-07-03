@@ -34,18 +34,18 @@ const Step3=({ formStep, nextFormStep })=> {
     // </div>
     <>
           <div className={`${formStep === 2 ? 'block' : 'hidden'}`}>
-            <div className="app-modal-body-header">
-              <h1 className="modal-applicant-header">Main Applicant</h1>
+            <div className="app-modal-body-header xss:flex-col lg:flex-row">
+              <h1 className="modal-applicant-header xss:py-3 lg:py-0">Main Applicant</h1>
               <h1 className="header-left">
                 Order Total: <span className="order-total"> 140 USD </span>
               </h1>
             </div>
-            <div className="app-modal-body">
+            <div className="app-modal-body xss:h-auto lg:h-[530px]">
               <h1 className="bp-h1">Please Provide The Following Details</h1>
               <div className="app-modal-form-wr">
                 <div className="w-form">
                   <form className="ng-untouched ng-pristine ng-invalid">
-                    <div className="input-group">
+                    <div className="input-group xss:flex-col lg:flex-row">
                       <div className="input-container">
                         <FormInput
                           className="input-field input-contact  ng-untouched ng-pristine ng-invalid"
@@ -54,7 +54,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         />
                         <div className="error-text-wr"></div>
                       </div>
-                      <div className="input-container-right">
+                      <div className="input-container-right xss:p-0 lg:pl-[10px]">
                         <FormInput
                           className="input-field input-email  ng-untouched ng-pristine ng-invalid"
                           pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
@@ -64,7 +64,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         <div className="error-text-wr"></div>
                       </div>
                     </div>
-                    <div className="input-group">
+                    <div className="input-group xss:flex-col lg:flex-row">
                       <div className="input-container">
                         <FormInput
                           className="input-field input-person  ng-untouched ng-pristine ng-invalid"
@@ -73,7 +73,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         />
                         <div className="error-text-wr"></div>
                       </div>
-                      <div className="input-container-right">
+                      <div className="input-container-right xss:p-0 lg:pl-[10px]">
                         <FormInput
                           className="input-field input-person  ng-untouched ng-pristine ng-invalid"
                           placeholder="Last Name"
@@ -82,7 +82,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         <div className="error-text-wr"></div>
                       </div>
                     </div>
-                    <div className="input-group">
+                    <div className="input-group xss:flex-col lg:flex-row">
                       <div className="input-container">
                         <FormInput
                           className="input-field input-nationality  ng-untouched ng-pristine"
@@ -91,7 +91,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         />
                         <div className="error-text-wr"></div>
                       </div>
-                      <div className="input-container-right">
+                      <div className="input-container-right xss:p-0 lg:pl-[10px]">
                         <FormInput
                           className="input-field input-country  ng-untouched ng-pristine ng-valid"
                           placeholder="Country of Residence"
@@ -100,7 +100,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         <div className="error-text-wr"></div>
                       </div>
                     </div>
-                    <div className="input-group">
+                    <div className="input-group xss:flex-col lg:flex-row">
                       <div className="input-container">
                         <FormInput
                           className="input-field input-passport  ng-untouched ng-pristine ng-invalid"
@@ -109,7 +109,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         />
                         <div className="error-text-wr"></div>
                       </div>
-                      <div className="input-container-right">
+                      <div className="input-container-right xss:p-0 lg:pl-[10px]">
                         <FormInput
                           className="input-field input-work  ng-untouched ng-pristine ng-invalid"
                           placeholder="Profession"
@@ -118,7 +118,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         <div className="error-text-wr"></div>
                       </div>
                     </div>
-                    <div className="input-group">
+                    <div className="input-group xss:flex-col lg:flex-row">
                       <div className="input-container">
                         <FormInput
                           className="input-field input-calendar  ng-untouched ng-pristine ng-invalid"
@@ -128,7 +128,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         />
                         <div className="error-text-wr"></div>
                       </div>
-                      <div className="input-container-right">
+                      <div className="input-container-right xss:p-0 lg:pl-[10px]">
                         <FormInput
                           className="input-field input-bag  ng-untouched ng-pristine ng-invalid"
                           placeholder="Purpose of Travel"
@@ -137,7 +137,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         <div className="error-text-wr"></div>
                       </div>
                     </div>
-                    <div className="input-group">
+                    <div className="input-group xss:flex-col lg:flex-row">
                       <div className="checkbox-container">
                         <input
                           id="visited-uae"

@@ -36,8 +36,8 @@ const Step1=({ formStep, nextFormStep }) =>{
                     <h1 className="bp-h1 bp-h1-grey">
                       What's required to make this application?
                     </h1>
-                    <div className="modal-app-list">
-                      <div className="modal-card dark:bg-[#1D2144]">
+                    <div className="modal-app-list xss:flex-col lg:flex-row">
+                      <div className="modal-card dark:bg-[#1D2144] xss:w-auto lg:w-[24%]">
                         <div className="card-icon-modal"></div>
                         <h1 className="card-header card-sm-h">
                           Valid <br /> Passport
@@ -48,7 +48,7 @@ const Step1=({ formStep, nextFormStep }) =>{
                           months validity.
                         </p>
                       </div>
-                      <div className="modal-card dark:bg-[#1D2144]">
+                      <div className="modal-card dark:bg-[#1D2144] xss:w-auto lg:w-[24%]">
                         <div className="card-icon-modal person"></div>
                         <h1 className="card-header card-sm-h">
                           Picture /<br /> Headshot
@@ -59,7 +59,7 @@ const Step1=({ formStep, nextFormStep }) =>{
                           white background.
                         </p>
                       </div>
-                      <div className="modal-card dark:bg-[#1D2144]">
+                      <div className="modal-card dark:bg-[#1D2144] xss:w-auto lg:w-[24%]">
                         <div className="card-icon-modal details"></div>
                         <h1 className="card-header card-sm-h">
                           Personal <br /> Details
@@ -70,7 +70,7 @@ const Step1=({ formStep, nextFormStep }) =>{
                           application.
                         </p>
                       </div>
-                      <div className="modal-card dark:bg-[#1D2144]">
+                      <div className="modal-card dark:bg-[#1D2144] xss:w-auto lg:w-[24%]">
                         <div className="card-icon-modal national-id"></div>
                         <h1 className="card-header card-sm-h">
                           Additional <br /> Documents
