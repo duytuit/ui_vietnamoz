@@ -21,12 +21,15 @@
     "eslint-config-next": "13.1.6",
     "next": "13.1.6",
     "next-themes": "^0.2.1",
+    "primeflex": "^3.3.1",
+    "primeicons": "^5.0.0",
     "primereact": "^9.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-modal-video": "^2.0.0",
     "react-query-kit": "^1.4.5",
-    "react-select": "^5.7.3"
+    "react-select": "^5.7.3",
+    "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^4.29.9",

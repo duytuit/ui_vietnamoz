@@ -1,17 +1,44 @@
 "use client"
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useOder } from "../context/orderContext";
 import { Checkbox } from 'primereact/checkbox';  
 import { Form } from "@unform/web";
+import { Button } from "primereact/button";
+import { countries } from "@/components/Common/Utils/countries";
+import Select,{ components } from "react-select";
 const Step4=({ formStep, nextFormStep })=> {
-    const { setFormOrderValues } = useOder();
+  const { setFormOrderValues } = useOder();
   const formRef = useRef();
 
   async function handleSubmit(data) {
    setFormOrderValues(data);
     nextFormStep();
   }
-
+ const countries = [
+    {
+      value: "AL",
+      label: "Albania",
+    },
+    {
+      value: "DZ",
+      label: "Algeria",
+    },
+    {
+      value: "AS",
+      label: "American Samoa",
+    },
+    {
+      value: "AD",
+      label: "Andorra",
+    },
+    {
+      value: "AO",
+      label: "Angola",
+    },
+  ];
+  const customStyles = {
+    indicatorSeparator: () => ({ display: "none" }),
+  };
   return (
     // <div>
     //   <h2>Billing Info</h2>
@@ -32,6 +59,7 @@ const Step4=({ formStep, nextFormStep })=> {
     //   </Form>
     // </div>
     <>
+      
           <div className={`${formStep === 3 ? 'block' : 'hidden'}`}>
             <div className="app-modal-body-header xss:flex-col lg:flex-row">
               <h1 className="modal-applicant-header xss:py-3 lg:py-0">
@@ -44,54 +72,24 @@ const Step4=({ formStep, nextFormStep })=> {
             <div className="app-modal-body">
               <div className="app-modal-column-group">
                 <div className="app-modal-column">
-                  <div className="app-column-header justified-left">
+                  <div className="app-column-header justified-left xss:m-0">
                     Change Visa Type?
                   </div>
-                  <div className="select-visa-dropdown w-dropdown">
-                    <div className="select-visa-toggle w-dropdown-toggle">
-                      <div className="w-icon-dropdown-toggle"></div>
-                      <div>
-                        
-                        96 hours transit visa - Single Visa Entry - USD 140
-                      </div>
-                    </div>
-                    <nav className="select-visa-list w-dropdown-list">
-                      <a className="select-visa-link w-dropdown-link ng-star-inserted">
-                        
-                        48 hours transit visa - Single Visa Entry - USD 100
-                      </a>
-                      <a className="select-visa-link w-dropdown-link ng-star-inserted">
-                        
-                        96 hours transit visa - Single Visa Entry - USD 140
-                      </a>
-                      <a className="select-visa-link w-dropdown-link ng-star-inserted">
-                        
-                        10 days - Single Visa Entry - USD 155
-                      </a>
-                      <a className="select-visa-link w-dropdown-link ng-star-inserted">
-                        
-                        30 days - Single Visa Entry - USD 180
-                      </a>
-                      <a className="select-visa-link w-dropdown-link ng-star-inserted">
-                        
-                        60 days - Single Visa Entry - USD 325
-                      </a>
-                      <a className="select-visa-link w-dropdown-link ng-star-inserted">
-                        
-                        30 days - Multiple Visa Entry - USD 390
-                      </a>
-                      <a className="select-visa-link w-dropdown-link ng-star-inserted">
-                        
-                        60 days - Multiple Visa Entry - USD 490
-                      </a>
-                    </nav>
-                  </div>
-                  <div className="card-header card-header-big ng-star-inserted">
+                  <div className="card flex justify-content-center">
+                  <Select
+                    options={countries}
+                    styles={customStyles}
+                    placeholder={"Enter your nationality to begin"}
+                    className="w-[270px]"
+                  />
+             </div>
+       
+                  <div className="card-header card-header-big ng-star-inserted py-[10px]">
                     You may add <span className="pink-text-large"> 9 </span>
                     <br />
                     more applicants
                   </div>
-                  <button className="app-card app-add-applicant w-inline-block dark:bg-[#1D2144]">
+                  <button className="app-card app-add-applicant w-inline-block dark:bg-[#1D2144] lg:!w-[170px]">
                     <div className="card-icon-modal add-applicant ng-star-inserted"></div>
                     <span className="ng-star-inserted">
                       <h1 className="card-header">

@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button } from "primereact/button";
+import { Dropdown } from "primereact/dropdown";
+import { useState } from "react";
 
 const Hero = () => {
-  
+
   return (
     <>
       <section
@@ -21,6 +24,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
+       
       </section>
     </>
   );
