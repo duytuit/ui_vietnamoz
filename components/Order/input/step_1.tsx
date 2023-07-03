@@ -32,7 +32,7 @@ const Step1=({ formStep, nextFormStep }) =>{
               <div className="ng-scroll-offset ng-scroll-viewport">
                 <div className="ng-scroll-content">
                   <div className="modal-wr-mobile">
-                    <h1 className="bp-h1 text-white">Let's get your Visa(s)</h1>
+                    <h1 className="bp-h1 text-black dark:text-white">Let's get your Visa(s)</h1>
                     <h1 className="bp-h1 bp-h1-grey">
                       What's required to make this application?
                     </h1>

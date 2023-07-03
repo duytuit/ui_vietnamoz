@@ -29,13 +29,13 @@ const Step2=({ formStep, nextFormStep }) =>{
         <div>
           <div>
             <div className="app-modal-body-wr app-modal-upload-wr">
-              <div className="app-modal-body-header xss:flex-col lg:flex-row">
+              <div className="app-modal-body-header">
                 <h1 className="modal-applicant-header xss:py-3 lg:py-0">Main Applicant</h1>
                 <h1 className="header-left">
                   Order Total: <span className="order-total"> 140 USD </span>
                 </h1>
               </div>
-              <div className="app-modal-body xss:h-auto lg:h-[530px]">
+              <div className="app-modal-body">
                 <h1 className="bp-h1">Please Upload the Following Documents</h1>
                 <div className="app-modal-info">
                   <div>
@@ -47,7 +47,7 @@ const Step2=({ formStep, nextFormStep }) =>{
                     <span className="pink-text">4 MB per upload</span>
                   </div>
                 </div>
-                <div className="app-modal-card-wr xss:flex-col lg:flex-row">
+                <div className="app-modal-card-wr">
                   <input accept=".jpg,.png,.jpeg,.pdf" type="file" />
                   <a className="app-card w-inline-block dark:bg-[#1D2144]">
                     <div className="card-icon-modal ng-star-inserted"></div>

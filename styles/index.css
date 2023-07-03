@@ -461,6 +461,12 @@ input[type=checkbox]:checked+label:before {
     line-height: 42px;
     font-size: 18px;
   }
+  .app-modal-body-header,.app-modal-card-wr,.input-group {
+    flex-direction: column !important;
+  }
+  .input-container-right{
+    padding: 0 !important;
+  }
 }
 .app-card {
   display: flex;
@@ -854,10 +860,12 @@ input:checked+.switcher__indicator:after {
 
 .app-modal-body-header {
   justify-content: space-between;
+  flex-direction: row;
 }
 .modal-applicant-header {
   line-height: 20px;
   text-transform: uppercase;
+  padding: 10px 0;
 }
 .header-left {
   margin-top: 0;
@@ -879,7 +887,6 @@ input:checked+.switcher__indicator:after {
   font-weight: 600;
 }
 .app-modal-body {
-  height: 530px;
   flex-direction: column;
   justify-content: center;
   flex: 0 0 auto;
@@ -904,6 +911,7 @@ input:checked+.switcher__indicator:after {
 }
 .app-modal-card-wr {
   display: flex;
+  flex-direction: row;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 0;
@@ -946,6 +954,7 @@ input:checked+.switcher__indicator:after {
 }
 .input-group {
   display: flex;
+  flex-direction: row;
 }
 .input-container {
   position: static;
