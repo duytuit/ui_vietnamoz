@@ -36,7 +36,7 @@ const Step1=({ formStep, nextFormStep }) =>{
                     <h1 className="bp-h1 bp-h1-grey">
                       What's required to make this application?
                     </h1>
-                    <div className="modal-app-list xss:flex-col lg:flex-row">
+                    <div className="modal-app-list lg:!flex-row">
                       <div className="modal-card dark:bg-[#1D2144] xss:w-auto lg:w-[24%]">
                         <div className="card-icon-modal"></div>
                         <h1 className="card-header card-sm-h">
