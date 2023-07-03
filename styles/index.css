@@ -162,6 +162,7 @@
 }
 .faq-answer{
   padding: 20px;
+  word-break: break-all;
 }
 .panel {
   font-size: 14px;
