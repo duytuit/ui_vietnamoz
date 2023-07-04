@@ -1,18 +1,42 @@
 "use client"
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useOder } from "../context/orderContext";
 import { Checkbox } from 'primereact/checkbox';  
 import { Form } from "@unform/web";
 import FormInput from "@/components/Common/FormInput";
 const Step5=({ formStep, nextFormStep })=> {
     const { setFormOrderValues } = useOder();
+    const [isShowExpressService, setShowExpressService] = useState(false);
+    const [chauffeurService, setChauffeurService] = useState(false);
+    const [travelInsuranceService, setTravelInsuranceService] = useState(false);
   const formRef = useRef();
 
   async function handleSubmit(data) {
    setFormOrderValues(data);
     nextFormStep();
   }
-
+  const express_service = (event) => {
+    const mydivclass = event.target.closest(".extra-service-card").querySelector('.relative') as HTMLElement;
+    //const mydivclass = event.target.closest(".extra-service-card").querySelector('.card-service-icon');
+    console.log(mydivclass);
+    
+    if(mydivclass.classList.contains('text-white')) {
+      console.log('có');
+      
+      mydivclass.classList.remove('text-white')
+    }else{
+      console.log('khong');
+      mydivclass.classList.add('text-white')
+    }
+  };
+  const chauffeur_service = () => {
+    console.log(chauffeurService);
+    setChauffeurService(!chauffeurService);
+  };
+  const travel_insurance_service = () => {
+    console.log(travelInsuranceService);
+    setTravelInsuranceService(!travelInsuranceService);
+  };
   return (
     // <div>
     //   <h2>Billing Info</h2>
@@ -83,37 +107,42 @@ const Step5=({ formStep, nextFormStep })=> {
               </table>
               <div>Add to your order?</div>
               <div className="extra-services-wr">
-                <input id="express_service" type="checkbox" disabled/>
-                <label className="extra-service-card w-inline-block dark:bg-[#1D2144]" htmlFor="express_service">
+                <input id="express_service" type="checkbox"/>
+                <label className="extra-service-card w-inline-block dark:bg-[#1D2144] express_service" htmlFor="express_service">
+                <div className="relative h-[100%]" onClick={express_service}>
                   <div className="extra-service-card-header">
-                    <div className="card-service-icon express-off"></div>
-                    <div>0 USD</div>
-                  </div>
-                  <h1 className="card-header card-header-service">
-                    Express Service
-                  </h1>
-                  <p className="card-para car-para-sm card-para-service">
-                    Get your order in 12 Hours
-                  </p>
+                      <div className="card-service-icon"></div>
+                      <div>0 USD</div>
+                    </div>
+                    <h1 className="card-header card-header-service">
+                      Express Service
+                    </h1>
+                    <p className="card-para car-para-sm card-para-service">
+                      Get your order in 12 Hours
+                    </p>
+                 </div>
                 </label>
-                <input id="chauffeur_service" type="checkbox" disabled/>
-                <label className="extra-service-card w-inline-block dark:bg-[#1D2144]" htmlFor="chauffeur_service">
-                  <div className="extra-service-card-header">
-                    <div className="card-service-icon chauffeur-off"></div>
-                    <div>0 USD</div>
+                <input id="chauffeur_service" type="checkbox"/>
+                <label className="extra-service-card w-inline-block dark:bg-[#1D2144] chauffeur_service"  htmlFor="chauffeur_service">
+                <div className="relative h-[100%]" onClick={express_service}>
+                    <div className="extra-service-card-header">
+                      <div className="card-service-icon"></div>
+                      <div>0 USD</div>
+                    </div>
+                    <h1 className="card-header card-header-service">
+                      Airport Pickup
+                    </h1>
+                    <p className="card-para car-para-sm card-para-service">
+                      Pre-book one way airport transfer from DXB airport to
+                      anywhere in Dubai
+                    </p>
                   </div>
-                  <h1 className="card-header card-header-service">
-                    Airport Pickup
-                  </h1>
-                  <p className="card-para car-para-sm card-para-service">
-                    Pre-book one way airport transfer from DXB airport to
-                    anywhere in Dubai
-                  </p>
                 </label>
-                <input id="travel_insurance_service" type="checkbox" disabled/>
-                <label className="extra-service-card w-inline-block dark:bg-[#1D2144]" htmlFor="travel_insurance_service">
+                <input id="travel_insurance_service" type="checkbox"/>
+                <label className="extra-service-card w-inline-block dark:bg-[#1D2144] travel_insurance_service" htmlFor="travel_insurance_service">
+                  <div className="relative h-[100%]" onClick={express_service}>
                   <div className="extra-service-card-header">
-                    <div className="card-service-icon travel-insurance-off"></div>
+                    <div className="card-service-icon"></div>
                     <div>0 USD</div>
                   </div>
                   <h1 className="card-header card-header-service">
@@ -122,6 +151,7 @@ const Step5=({ formStep, nextFormStep })=> {
                   <p className="card-para car-para-sm card-para-service">
                     Get travel insurance with your visa
                   </p>
+                  </div>
                 </label>
               </div>
               <div>

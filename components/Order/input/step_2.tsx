@@ -9,6 +9,10 @@ const Step2=({ formStep, nextFormStep }) =>{
   const formRef = useRef();
 
   async function handleSubmit(data) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
    setFormOrderValues(data);
     nextFormStep();
   }

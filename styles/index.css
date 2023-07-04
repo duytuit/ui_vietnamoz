@@ -1360,6 +1360,50 @@ input:checked+.switcher__indicator:after {
   background-position: 3% 50%;
   background-size: 20px;
 }
+.card-service-icon.express-on {
+  background-image: url(/images/contact/epress-on.103eff44d68241c9f706.svg);
+  background-position: 3% 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+.card-service-icon.chauffeur-on {
+  background-image: url(/images/contact/chauffeur-on.cc759902ca43a94fc810.svg);
+  background-position: 3% 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+.card-service-icon.travel-insurance-on {
+  background-image: url(/images/contact/travel-insurance-on.67334bf4710fcdc64c65.svg);
+  background-position: 3% 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+.extra-services-wr input[type=checkbox]:checked+.extra-service-card:before {
+  background-color: #bf32e0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* height: 20px; */
+  border: 0px solid #bf32e0;
+  border-radius: 5px;
+  position: absolute;
+  left: 0px;
+  top: 0;
+  transform:none
+}
+.extra-service-card:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* height: 20px; */
+  border: 0px solid #c900fa;
+  border-radius: 5px;
+  position: absolute;
+  left: 0px;
+  top: 0;
+}
 @media (min-width: 640px) {
   table {
     display: inline-table !important;
