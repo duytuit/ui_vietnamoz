@@ -83,7 +83,8 @@ const Step5=({ formStep, nextFormStep })=> {
               </table>
               <div>Add to your order?</div>
               <div className="extra-services-wr">
-                <a className="extra-service-card w-inline-block dark:bg-[#1D2144]">
+                <input id="express_service" type="checkbox" disabled/>
+                <label className="extra-service-card w-inline-block dark:bg-[#1D2144]" htmlFor="express_service">
                   <div className="extra-service-card-header">
                     <div className="card-service-icon express-off"></div>
                     <div>0 USD</div>
@@ -94,8 +95,9 @@ const Step5=({ formStep, nextFormStep })=> {
                   <p className="card-para car-para-sm card-para-service">
                     Get your order in 12 Hours
                   </p>
-                </a>
-                <a className="extra-service-card w-inline-block dark:bg-[#1D2144]">
+                </label>
+                <input id="chauffeur_service" type="checkbox" disabled/>
+                <label className="extra-service-card w-inline-block dark:bg-[#1D2144]" htmlFor="chauffeur_service">
                   <div className="extra-service-card-header">
                     <div className="card-service-icon chauffeur-off"></div>
                     <div>0 USD</div>
@@ -107,8 +109,9 @@ const Step5=({ formStep, nextFormStep })=> {
                     Pre-book one way airport transfer from DXB airport to
                     anywhere in Dubai
                   </p>
-                </a>
-                <a className="extra-service-card w-inline-block dark:bg-[#1D2144]">
+                </label>
+                <input id="travel_insurance_service" type="checkbox" disabled/>
+                <label className="extra-service-card w-inline-block dark:bg-[#1D2144]" htmlFor="travel_insurance_service">
                   <div className="extra-service-card-header">
                     <div className="card-service-icon travel-insurance-off"></div>
                     <div>0 USD</div>
@@ -119,7 +122,7 @@ const Step5=({ formStep, nextFormStep })=> {
                   <p className="card-para car-para-sm card-para-service">
                     Get travel insurance with your visa
                   </p>
-                </a>
+                </label>
               </div>
               <div>
                 <div className="w-form">

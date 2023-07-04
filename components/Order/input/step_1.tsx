@@ -88,7 +88,7 @@ const Step1=({ formStep, nextFormStep }) =>{
                       </h1>
                       <div className="checkbox-container">
                         <input id="disclamer-1" type="checkbox" />
-                        <label htmlFor="disclamer-1">
+                        <label className="label_disclamer_1 pl-9" htmlFor="disclamer-1">
                           The decision to grant or refuse the visa(s) is the
                           sole prerogative and at the sole discretion of
                           Government of UAE.
@@ -96,7 +96,7 @@ const Step1=({ formStep, nextFormStep }) =>{
                       </div>
                       <div className="checkbox-container">
                         <input id="disclamer-2" type="checkbox" />
-                        <label htmlFor="disclamer-2">
+                        <label className="label_disclamer_2 pl-9" htmlFor="disclamer-2">
                           I hereby confirm that no active visa application is
                           currently under processing by another agent. This
                           could lead to a none refundable rejection of my visa

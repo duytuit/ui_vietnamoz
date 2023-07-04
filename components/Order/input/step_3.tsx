@@ -144,7 +144,7 @@ const Step3=({ formStep, nextFormStep })=> {
                           type="checkbox"
                           className="ng-untouched ng-pristine ng-valid"
                         />
-                        <label htmlFor="visited-uae">
+                        <label className="label_visited pl-9" htmlFor="visited-uae">
                           
                           Visited the UAE before
                         </label>

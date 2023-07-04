@@ -351,7 +351,7 @@ input.ng-invalid.ng-touched {
   flex-wrap: nowrap;
   align-items: center;
 }
-input[type=checkbox]+label:before {
+input[type=checkbox]+.label_visited:before,input[type=checkbox]+.label_disclamer_1:before,input[type=checkbox]+.label_disclamer_2:before {
   content: "";
   display: block;
   width: 20px;
@@ -364,12 +364,11 @@ input[type=checkbox]+label:before {
   transition: all .12s,border-color .08s;
 }
 input[type=checkbox]+label:last-child {
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
 }
 input[type=checkbox]+label {
   display: block;
   position: relative;
-  padding-left: 35px;
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
@@ -1264,13 +1263,26 @@ input:checked+.switcher__indicator:after {
 .card-service-icon {
   width: 25px;
   height: 25px;
-  background-image: url(/images/contact/travel-insurance-off.578265be3d45a1bee880.svg);
+  background-image: url(/images/contact/express-off.3128fe54cf280a66fddb.svg);
   background-position: 0 50%;
   background-size: contain;
   background-repeat: no-repeat;
 }
+/* .card-service-icon.express-off {
+  width: 25px;
+  height: 25px;
+  background-image: url(/images/contact/express-off.3128fe54cf280a66fddb.svg);
+  background-position: 0 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+} */
 .card-service-icon.chauffeur-off {
   background-image: url(/images/contact/chauffeur-off.59ef2edda28f8d103980.svg);
+  background-position: 50% 50%;
+  background-size: contain;
+}
+.card-service-icon.travel-insurance-off {
+  background-image: url(/images/contact/travel-insurance-off.578265be3d45a1bee880.svg);
   background-position: 50% 50%;
   background-size: contain;
 }
