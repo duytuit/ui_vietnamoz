@@ -15,7 +15,7 @@ const nextConfig = {
     return [
       {
         source: "/:slug*",
-        destination: "http://localhost:8091/:slug*", // Matched parameters can be used in the destination
+        destination: `${process.env.REACT_APP_API_URL}:slug*`, // Matched parameters can be used in the destination
         has: [
           {
             type: 'header',

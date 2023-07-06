@@ -18,6 +18,7 @@
     "@tanstack/react-query-devtools": "^4.29.19",
     "@unform/web": "^2.1.6",
     "axios": "^1.4.0",
+    "cross-env": "^7.0.3",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "next": "13.1.6",
