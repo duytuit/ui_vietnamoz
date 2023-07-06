@@ -10,11 +10,11 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { fetchCategory, fetchServiceVisas } from './api';
 
-const formatOptionLabel = ({ value, label }) => (
+const formatOptionLabel = ({ value, name ,slug ,id}) => (
   <div style={{ display: "flex" }}>
     <div style={{ marginLeft: "10px" }}>
       <Image
-        src={`http://45.119.87.103:8090/upload/2023-06-29/${value}.svg`}
+        src={`http://45.119.87.103:8090/upload/2023-06-29/${slug}.svg`}
         alt="author"
         width="40"
         height="40"
@@ -23,17 +23,20 @@ const formatOptionLabel = ({ value, label }) => (
     <div
       style={{ marginLeft: "10px", display: "flex", alignItems: "center" }}
     >
-      {label}
+      {name}
     </div>
   </div>
 );
 const SearchLocation = () => {
-  const [country, setCountry] = useState(1);
+  const [country, setCountry] = useState({
+     projectId:1,
+     categoryId:1,
+  });
   const { data: serviceVisas, isLoading : isLoading_ServiceVisas } = useQuery(['ServiceVisas',country],()=> fetchServiceVisas(country));
- 
-  const [categories, setCategories] = useState(2);
+  const [categories, setCategories] = useState({
+    projectId:2
+  });
   const { data: list_categories,isLoading:isLoading_Categories } = useQuery(['Categories',categories],()=> fetchCategory(categories));
-  
       const customStyles = {
         dropdownIndicator: (base: any) => ({
           ...base,
@@ -86,24 +89,33 @@ const SearchLocation = () => {
         );
       };
       const getServiceVisa = async (event)=>{
-        console.log(event.value);
-        
-        setCountry(event.value);
+        // const category = list_categories.find( item =>item.slug === event.value);
+        // if(category){
+        // }
+        if(event){
+          setCountry({...country,categoryId:event.id});
+        }
       }
+      
     return (
       <>
         <section className="relative z-20 mt-[-40px]">
           <div className="container">
           <Select
                 formatOptionLabel={formatOptionLabel}
-                options={countries}
+                options={list_categories}
+                getOptionLabel ={(option) => `${option.name}`}
+                getOptionValue ={(option) => `${option.id}`}
                 components={{ClearIndicator,DropdownIndicator}}
                 styles={customStyles}
                 isClearable
                 placeholder={"Enter your nationality to begin"}
                 onChange={getServiceVisa}
             />
-         <ProductList product={country}/>
+            {
+              serviceVisas ? (<ProductList serviceVisas={serviceVisas}/>) :('')
+            }
+         
           </div>
            
         </section>
