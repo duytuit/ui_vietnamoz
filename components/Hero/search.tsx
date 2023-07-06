@@ -29,7 +29,7 @@ const formatOptionLabel = ({ value, name ,slug ,id}) => (
 );
 const SearchLocation = () => {
   const [country, setCountry] = useState({
-     projectId:1,
+     projectId:2,
      categoryId:1,
   });
   const { data: serviceVisas, isLoading : isLoading_ServiceVisas } = useQuery(['ServiceVisas',country],()=> fetchServiceVisas(country));
