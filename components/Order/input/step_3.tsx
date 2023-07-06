@@ -37,6 +37,7 @@ const Step3=({ formStep, nextFormStep })=> {
     //   </Form>
     // </div>
     <>
+     <Form ref={formRef} onSubmit={handleSubmit}>
           <div className={`${formStep === 2 ? 'block' : 'hidden'}`}>
             <div className="app-modal-body-header">
               <h1 className="modal-applicant-header xss:py-3 lg:py-0">Main Applicant</h1>
@@ -54,7 +55,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         <FormInput
                           className="input-field input-contact  ng-untouched ng-pristine ng-invalid"
                           placeholder="Contact Number including country code"
-                          type="text"
+                          type="text" value='sdfdf'
                         />
                         <div className="error-text-wr"></div>
                       </div>
@@ -63,7 +64,7 @@ const Step3=({ formStep, nextFormStep })=> {
                           className="input-field input-email  ng-untouched ng-pristine ng-invalid"
                           pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
                           placeholder="Email Address"
-                          type="text"
+                          type="text" value='sdfdf'
                         />
                         <div className="error-text-wr"></div>
                       </div>
@@ -73,7 +74,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         <FormInput
                           className="input-field input-person  ng-untouched ng-pristine ng-invalid"
                           placeholder="First Name or any middle names"
-                          type="text"
+                          type="text" value='sdfdf'
                         />
                         <div className="error-text-wr"></div>
                       </div>
@@ -81,7 +82,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         <FormInput
                           className="input-field input-person  ng-untouched ng-pristine ng-invalid"
                           placeholder="Last Name"
-                          type="text"
+                          type="text" value='sdfdf'
                         />
                         <div className="error-text-wr"></div>
                       </div>
@@ -91,7 +92,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         <FormInput
                           className="input-field input-nationality  ng-untouched ng-pristine"
                           placeholder="Nationality"
-                          type="text"
+                          type="text" value='sdfdf'
                         />
                         <div className="error-text-wr"></div>
                       </div>
@@ -99,7 +100,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         <FormInput
                           className="input-field input-country  ng-untouched ng-pristine ng-valid"
                           placeholder="Country of Residence"
-                          type="text"
+                          type="text" value='sdfdf'
                         />
                         <div className="error-text-wr"></div>
                       </div>
@@ -109,7 +110,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         <FormInput
                           className="input-field input-passport  ng-untouched ng-pristine ng-invalid"
                           placeholder="Passport No"
-                          type="text"
+                          type="text" value='sdfdf'
                         />
                         <div className="error-text-wr"></div>
                       </div>
@@ -117,7 +118,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         <FormInput
                           className="input-field input-work  ng-untouched ng-pristine ng-invalid"
                           placeholder="Profession"
-                          type="text"
+                          type="text" value='sdfdf'
                         />
                         <div className="error-text-wr"></div>
                       </div>
@@ -128,7 +129,7 @@ const Step3=({ formStep, nextFormStep })=> {
                           className="input-field input-calendar  ng-untouched ng-pristine ng-invalid"
                           pattern="^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{2}$"
                           placeholder="Travel Date: dd/mm/yy"
-                          type="text"
+                          type="text" value='sdfdf'
                         />
                         <div className="error-text-wr"></div>
                       </div>
@@ -136,7 +137,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         <FormInput
                           className="input-field input-bag  ng-untouched ng-pristine ng-invalid"
                           placeholder="Purpose of Travel"
-                          type="text"
+                          type="text" value='sdfdf'
                         />
                         <div className="error-text-wr"></div>
                       </div>
@@ -164,6 +165,7 @@ const Step3=({ formStep, nextFormStep })=> {
                         </button>
             </div>
           </div>
+          </Form>
     </>
   );
 }

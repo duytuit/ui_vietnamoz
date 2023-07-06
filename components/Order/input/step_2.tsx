@@ -5,7 +5,7 @@ import { useOder } from "../context/orderContext";
 import { Form } from "@unform/web";
 
 const Step2=({ formStep, nextFormStep }) =>{
-    const { setFormOrderValues } = useOder();
+    const { order,setFormOrderValues } = useOder();
   const formRef = useRef();
 
   async function handleSubmit(data) {
@@ -29,6 +29,8 @@ const Step2=({ formStep, nextFormStep }) =>{
     //   </Form>
     // </div>
     <>
+     {/* <Form ref={formRef} onSubmit={handleSubmit}> */}
+      <div>{order.title}</div>
       <div className={`wizard-steps horizontal ${formStep === 1 ? 'block' : 'hidden'}`}>
         <div>
           <div>
@@ -90,6 +92,7 @@ const Step2=({ formStep, nextFormStep }) =>{
           </div>
         </div>
       </div>
+      {/* </Form> */}
     </>
   );
 }

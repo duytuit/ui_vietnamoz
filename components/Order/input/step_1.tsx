@@ -14,7 +14,14 @@ const Step1=({ formStep, nextFormStep }) =>{
       top: 0,
       behavior: "smooth",
     });
-     setFormOrderValues(data);
+     setFormOrderValues({
+       id: 3,
+       title: "string",
+       description: "string",
+       status: true,
+     });
+     console.log('dsfdssfd');
+     
     nextFormStep();
   }
 
@@ -29,6 +36,7 @@ const Step1=({ formStep, nextFormStep }) =>{
     //   </Form>
     // </div>
     <>
+      <Form ref={formRef} onSubmit={handleSubmit}>
       <div className={`start-modal-wr ${formStep === 0 ? 'block' : 'hidden'}`}>
         <div className="ng-scrollbar">
           <div className="ng-scrollbar-wrapper">
@@ -115,7 +123,7 @@ const Step1=({ formStep, nextFormStep }) =>{
                           application.
                         </div>
                       </div> */}
-                        <button className="bp-btn btn-modal-next w-button" onClick={handleSubmit}>
+                        <button className="bp-btn btn-modal-next w-button">
                           Continue
                         </button>
                     </div>
@@ -126,6 +134,7 @@ const Step1=({ formStep, nextFormStep }) =>{
           </div>
         </div>
       </div>
+      </Form>
     </>
   );
 }

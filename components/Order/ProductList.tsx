@@ -1,10 +1,10 @@
 import { FC, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-export interface countryProps {
-  country?: string;
+export interface productProps {
+  product?: number;
 }
-const ProductList: FC<countryProps> = ({ country = null }) => {
+const ProductList: FC<productProps> = ({ product = null }) => {
   const searchParams = useSearchParams();
   console.log("searchParams", searchParams);
   return (

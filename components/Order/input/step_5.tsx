@@ -13,6 +13,8 @@ const Step5=({ formStep, nextFormStep })=> {
 
   async function handleSubmit(data) {
    setFormOrderValues(data);
+   console.log(data);
+   
     nextFormStep();
   }
   const express_service = (event) => {
@@ -57,6 +59,7 @@ const Step5=({ formStep, nextFormStep })=> {
     //   </Form>
     // </div>
     <>
+    <Form ref={formRef} onSubmit={handleSubmit}>
       <div className={`${formStep === 4 ? "block" : "hidden"}`}>
         <div className="app-modal-column-group app-modal-column-group-checkout">
           <div className="app-modal-column app-modal-column-checkout alternative-column">
@@ -185,6 +188,7 @@ const Step5=({ formStep, nextFormStep })=> {
           </div>
         </div>
       </div>
+      </Form>
     </>
   );
 }

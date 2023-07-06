@@ -5,23 +5,35 @@ import { faSpinner, faCircleNotch } from '@fortawesome/free-solid-svg-icons'
 import Select,{ components } from "react-select";
 import Image from "next/image";
 import { countries } from '../Common/Utils/countries';
-import Order from '../Order';
 import ProductList from '../Order/ProductList';
 import { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { fetchCategory, fetchServiceVisas } from './api';
 
-  const formatOptionLabel = ({ value, label }) => (
-    <div style={{ display: "flex"}}>
-      <div style={{ marginLeft: "10px" }}>
-        <Image
-        src= {`http://45.119.87.103:8090/upload/2023-06-29/${value}.svg`}
-        alt="author" width="40" height="40"
-        />
-      </div>
-      <div style={{ marginLeft: "10px", display:'flex',alignItems:'center' }}>{label}</div>
+const formatOptionLabel = ({ value, label }) => (
+  <div style={{ display: "flex" }}>
+    <div style={{ marginLeft: "10px" }}>
+      <Image
+        src={`http://45.119.87.103:8090/upload/2023-06-29/${value}.svg`}
+        alt="author"
+        width="40"
+        height="40"
+      />
     </div>
-  );
+    <div
+      style={{ marginLeft: "10px", display: "flex", alignItems: "center" }}
+    >
+      {label}
+    </div>
+  </div>
+);
 const SearchLocation = () => {
-  const [country, setCountry] = useState('');
+  const [country, setCountry] = useState(1);
+  const { data: serviceVisas, isLoading : isLoading_ServiceVisas } = useQuery(['ServiceVisas',country],()=> fetchServiceVisas(country));
+ 
+  const [categories, setCategories] = useState(2);
+  const { data: list_categories,isLoading:isLoading_Categories } = useQuery(['Categories',categories],()=> fetchCategory(categories));
+  
       const customStyles = {
         dropdownIndicator: (base: any) => ({
           ...base,
@@ -73,10 +85,11 @@ const SearchLocation = () => {
           </components.DropdownIndicator>
         );
       };
-    //   const CaretDownIcon = () => {
-    //     return <FontAwesomeIcon icon="search" style={{padding: '10px'}}/>;
-    //   };
-    // <div className={props.selectProps.isClearable ?'close-icon': 'search-icon-wr'} ></div>
+      const getServiceVisa = async (event)=>{
+        console.log(event.value);
+        
+        setCountry(event.value);
+      }
     return (
       <>
         <section className="relative z-20 mt-[-40px]">
@@ -88,8 +101,9 @@ const SearchLocation = () => {
                 styles={customStyles}
                 isClearable
                 placeholder={"Enter your nationality to begin"}
+                onChange={getServiceVisa}
             />
-         <ProductList country={country}/>
+         <ProductList product={country}/>
           </div>
            
         </section>

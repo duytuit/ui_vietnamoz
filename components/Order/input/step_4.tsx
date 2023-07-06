@@ -63,7 +63,7 @@ const Step4=({ formStep, nextFormStep })=> {
     //   </Form>
     // </div>
     <>
-      
+       <Form ref={formRef} onSubmit={handleSubmit}>
           <div className={`${formStep === 3 ? 'block' : 'hidden'}`}>
             <div className="app-modal-body-header xss:flex-col lg:flex-row">
               <h1 className="modal-applicant-header xss:py-3 lg:py-0">
@@ -112,11 +112,12 @@ const Step4=({ formStep, nextFormStep })=> {
               </div>
             </div>
             <div className="app-modal-footer">
-            <button className="bp-btn btn-modal-next w-button" onClick={handleSubmit}>
+            <button className="bp-btn btn-modal-next w-button">
                           Continue
                         </button>
             </div>
           </div>
+          </Form>
     </>
   );
 }
