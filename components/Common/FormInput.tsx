@@ -8,7 +8,7 @@ const FormInput = (props) => {
 
   const getValidateType = (type, label?:string) => {
     let validateType = {
-      errorMessage: label ? `Vui lòng nhập ${label.toLowerCase()}` : 'Vui lòng nhập đủ thông tin bắt buộc!',
+      errorMessage: label ? `Please ${label.toLowerCase()}` : `Required Information`,
       pattern:null,
       minLength:null,
       patterns:null,
@@ -40,11 +40,11 @@ const FormInput = (props) => {
       return;
     };
     if (getValidateType(type).pattern && !getValidateType(type).pattern.test(value)) {
-      setError(`Vui lòng nhập đúng định dạng`);
+      setError(`Please enter the correct format`);
       error = true;
     };
     if (getValidateType(type).minLength && value.length < getValidateType(type).minLength) {
-      setError(`Vui lòng tối thiểu ${getValidateType(type).minLength} ký tự`);
+      setError(`Please minimum ${getValidateType(type).minLength} characters`);
       error = true;
     };
     if (!error) {

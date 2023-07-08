@@ -9,8 +9,9 @@ import ProductList from '../Order/ProductList';
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { fetchCategory, fetchServiceVisas } from './api';
+import { toast } from 'react-toastify';
 
-const formatOptionLabel = ({ value, name ,slug ,id}) => (
+const formatOptionLabel = ({ value, name ,slug ,id,sdfdsfdsfsdfds}) => (
   <div style={{ display: "flex" }}>
     <div style={{ marginLeft: "10px" }}>
       <Image
@@ -31,12 +32,15 @@ const SearchLocation = () => {
   const [country, setCountry] = useState({
      projectId:2,
      categoryId:1,
+     remark:'usd',
+     name:null,
   });
   const { data: serviceVisas, isLoading : isLoading_ServiceVisas } = useQuery(['ServiceVisas',country],()=> fetchServiceVisas(country));
   const [categories, setCategories] = useState({
     projectId:2
   });
   const { data: list_categories,isLoading:isLoading_Categories } = useQuery(['Categories',categories],()=> fetchCategory(categories));
+    // console.log('list_categories',list_categories);
       const customStyles = {
         dropdownIndicator: (base: any) => ({
           ...base,
@@ -93,7 +97,7 @@ const SearchLocation = () => {
         // if(category){
         // }
         if(event){
-          setCountry({...country,categoryId:event.id});
+          setCountry({...country,categoryId:event.id,name:event.name});
         }
       }
       
@@ -113,9 +117,8 @@ const SearchLocation = () => {
                 onChange={getServiceVisa}
             />
             {
-              serviceVisas ? (<ProductList serviceVisas={serviceVisas}/>) :('')
+              serviceVisas ? (<ProductList serviceVisas={serviceVisas} national={country}/>) :('')
             }
-         
           </div>
            
         </section>

@@ -1,8 +1,8 @@
 import axios, { AxiosError } from "axios";
+import { toast } from "react-toastify";
 // import store from "@/redux/store";
 // import { clientId } from "./getClinentId";
 // import { setUserInfo } from "@/redux/features/user";
-
 export const clientApi = axios.create({
     // axios Cấu hình yêu cầu được cấu hình với tùy chọn BaseURL, cho biết rằng phần công khai URL yêu cầu
     baseURL: '/',
@@ -35,25 +35,26 @@ clientApi.interceptors.response.use(
             localStorage.removeItem('token');
             // store.dispatch(setUserInfo('token-expired'));
         };
+        // console.log(res);
+        
         // if (res.data.status === false) ShowToast('error', res.data.mess)
         // if (res.data.message === "token-expired")
         //     return ShowToast('error', res.data.mess)
         return res
     },
     async function (error) {
-        // console.log({ error })
-        // let { name, message, ...e } = error
-        // if (name === 'AxiosError' && message === 'Network Error') {
-        //     message = 'lỗi kết nối AxiosNetworkError';
-        // } else if (error.response) {
-        //     if (error.response.status >= 500) message = 'server error '
-        //     if (error.response.status >= 400) message = 'client error'
-        // } else if (error?.message.startsWith('timeout of'))
-        //     message = 'Server timeout';
-
-        //     ShowToast('error', message)
-        // return { status: false, mess: message, no_connect: true }
-        // return Promise.reject(error);
+        let { name, message, ...e } = error
+        if (name === 'AxiosError' && message === 'Network Error') {
+            message = 'lỗi kết nối AxiosNetworkError';
+        } else if (error.response) {
+            if (error.response.status >= 500) message = 'server error '
+            if (error.response.status >= 400) message = 'client error'
+        } else if (error?.message.startsWith('timeout of'))
+            message = 'Server timeout';
+            toast(error.response.data.msg, { hideProgressBar: true, autoClose: 2000, type: 'warning' })
+        
+       // return { status: false, mess: message, no_connect: true }
+        //return Promise.reject(error);
         // store.dispatch(showToast({ severity: 'error', summary: 'Error', detail: 'Đường truyền không ổn định, vui lòng thử lại sau!' },));
         return { data: {}, status: false, mess: 'Đường truyền không ổn định, vui lòng thử lại sau!' }
     },

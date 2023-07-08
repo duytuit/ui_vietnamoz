@@ -4,19 +4,16 @@ import { useOder } from "../context/orderContext";
 import { Checkbox } from 'primereact/checkbox';  
 import { Form } from "@unform/web";
 import FormInput from "@/components/Common/FormInput";
-const Step5=({ formStep, nextFormStep })=> {
-    const { setFormOrderValues } = useOder();
+const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register})=> {
     const [isShowExpressService, setShowExpressService] = useState(false);
     const [chauffeurService, setChauffeurService] = useState(false);
     const [travelInsuranceService, setTravelInsuranceService] = useState(false);
-  const formRef = useRef();
+    const formRef = useRef();
 
-  async function handleSubmit(data) {
-   setFormOrderValues(data);
-   console.log(data);
-   
-    nextFormStep();
-  }
+    async function handleSubmit(data) {
+      console.log(data);
+      nextFormStep();
+    }
   const express_service = (event) => {
     const mydivclass = event.target.closest(".extra-service-card").querySelector('.relative') as HTMLElement;
     //const mydivclass = event.target.closest(".extra-service-card").querySelector('.card-service-icon');
@@ -40,24 +37,6 @@ const Step5=({ formStep, nextFormStep })=> {
     setTravelInsuranceService(!travelInsuranceService);
   };
   return (
-    // <div>
-    //   <h2>Billing Info</h2>
-
-    //   <Form ref={formRef} onSubmit={handleSubmit}>
-    //     <div>
-    //       <Checkbox name="kiểm tra" checked={false} />
-    //       <div className="checkbox-container">
-    //         <input id="disclamer-1" type="checkbox" className="hidden" />
-    //         <label htmlFor="disclamer-1">
-    //           The decision to grant or refuse the visa(s) is the sole
-    //           prerogative and at the sole discretion of Government of UAE.
-    //         </label>
-    //       </div>
-    //     </div>
-
-    //     <button type="submit">Confirm purchase</button>
-    //   </Form>
-    // </div>
     <>
     <Form ref={formRef} onSubmit={handleSubmit}>
       <div className={`${formStep === 4 ? "block" : "hidden"}`}>
@@ -182,7 +161,7 @@ const Step5=({ formStep, nextFormStep })=> {
             </div>
             <div className="app-modal-footer">
               <button className="bp-btn btn-modal-next w-button">
-                confirm
+                PAYMENT
               </button>
             </div>
           </div>

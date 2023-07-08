@@ -1,5 +1,5 @@
 
-const FormOrder =({ children, currentStep, prevFormStep })=> {
+const FormOrder =({ children, currentStep, prevFormStep, })=> {
   return (
     <div >
       {currentStep < 3 && (
