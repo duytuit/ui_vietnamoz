@@ -16,12 +16,17 @@ import { toast } from "react-toastify";
 // }
 if (performance?.navigation?.type == performance?.navigation?.TYPE_RELOAD) {
   console.info( "This page is reloaded" );
-  localStorage.removeItem('register')
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem('register')
+  }
+ 
 } else {
   console.info( "This page is not reloaded");
 }
-document.addEventListener("beforeunload", function (e) {        
-  localStorage.removeItem('register')
+document.addEventListener("beforeunload", function (e) {      
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem('register')
+  }  
 });
 export interface RegisterType {
   customers: CustomerType[];
@@ -51,7 +56,10 @@ export interface CustomerType {
   avatar?:string,
 }
 const Order = () => {
-  const national = JSON.parse(localStorage.getItem('national')) 
+  let national=null
+  if (typeof window !== 'undefined') {
+     national = JSON.parse(localStorage.getItem('national')) 
+  } 
   const [formStep, setFormStep] = useState(0);
   const [product, setProduct] = useState({});
   const [customer, setCustomer] = useState({
