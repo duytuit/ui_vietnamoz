@@ -11,16 +11,16 @@ import { fetchProduct } from "../Hero/api";
 import { Router } from "next/router";
 import { toast } from "react-toastify";
 //check for Navigation Timing API support
-if (window.performance) {
-  console.info("window.performance works fine on this browser");
-}
+// if (window.performance) {
+//   console.info("window.performance works fine on this browser");
+// }
 if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
   console.info( "This page is reloaded" );
   localStorage.removeItem('register')
 } else {
   console.info( "This page is not reloaded");
 }
-window.addEventListener("beforeunload", function (e) {        
+document.addEventListener("beforeunload", function (e) {        
   localStorage.removeItem('register')
 });
 export interface RegisterType {
@@ -82,6 +82,7 @@ const Order = () => {
       router.push("/");
     }
     setProduct(product);
+   
   }, []);
   console.log(register);
   console.log(customer);

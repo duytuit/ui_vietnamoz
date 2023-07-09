@@ -4,6 +4,7 @@ import { useOder } from "../context/orderContext";
 import { Checkbox } from 'primereact/checkbox';  
 import { Form } from "@unform/web";
 import FormInput from "@/components/Common/FormInput";
+import { formatCurrencyV2 } from "@/components/Common/Utils/Helper";
 const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register})=> {
     const [isShowExpressService, setShowExpressService] = useState(false);
     const [chauffeurService, setChauffeurService] = useState(false);
@@ -14,6 +15,21 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
       console.log(data);
       nextFormStep();
     }
+    let _register:any = localStorage.getItem('register')
+    let _new_register = JSON.parse(_register)
+    let _serviceVisas:any = localStorage.getItem('serviceVisas')
+    let _new_serviceVisas = JSON.parse(_serviceVisas)
+    // if(_register){
+    //  const _new_register = JSON.parse(_register)
+    //  _new_register.product =event
+    //  localStorage.setItem('register',JSON.stringify(_new_register))
+    // }else{
+    //   register.product =event
+    //   localStorage.setItem('register',JSON.stringify(register))
+    // }
+    const currency = localStorage.getItem('currency');
+    const exchange_rate = parseInt( localStorage.getItem('exchange_rate'));
+   let sumery = (currency == 'USD' ? (_new_register.product.price / exchange_rate)  : _new_register.product.price)
   const express_service = (event) => {
     const mydivclass = event.target.closest(".extra-service-card").querySelector('.relative') as HTMLElement;
     //const mydivclass = event.target.closest(".extra-service-card").querySelector('.card-service-icon');
@@ -21,7 +37,6 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
     
     if(mydivclass.classList.contains('text-white')) {
       console.log('có');
-      
       mydivclass.classList.remove('text-white')
     }else{
       console.log('khong');
@@ -75,13 +90,13 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
                 <tbody className="sm:flex-none">
                   <tr className="flex-no wrap mb-2 flex flex-col sm:mb-0 sm:table-row">
                     <td className="hover:bg-gray-100 border-s-fuchsia-500 dark:bg-[#1D2144] p-3">
-                    48 hours transit visa - Single Entry Visa
+                    {_new_register.product?.name}
                     </td>
                     <td className="hover:bg-gray-100 truncate border-s-fuchsia-500 dark:bg-[#1D2144] p-3">
-                      1
+                    {_new_register.customers.length}
                     </td>
                     <td className="hover:bg-gray-100 text-red-400 hover:text-red-600 cursor-pointer border-s-fuchsia-500 dark:bg-[#1D2144] p-3 hover:font-medium">
-                      100
+                      {currency == 'USD' ?(sumery*_new_register.customers.length).toFixed(2):formatCurrencyV2((sumery*_new_register.customers.length).toString())} {currency == 'USD' ? 'USD':'VND'}
                     </td>
                   </tr>
                 
@@ -89,52 +104,27 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
               </table>
               <div>Add to your order?</div>
               <div className="extra-services-wr">
-                <input id="express_service" type="checkbox"/>
-                <label className="extra-service-card w-inline-block dark:bg-[#1D2144] express_service" htmlFor="express_service">
-                <div className="relative h-[100%]" onClick={express_service}>
-                  <div className="extra-service-card-header">
-                      <div className="card-service-icon"></div>
-                      <div>0 USD</div>
-                    </div>
-                    <h1 className="card-header card-header-service">
-                      Express Service
-                    </h1>
-                    <p className="card-para car-para-sm card-para-service">
-                      Get your order in 12 Hours
-                    </p>
-                 </div>
-                </label>
-                <input id="chauffeur_service" type="checkbox"/>
-                <label className="extra-service-card w-inline-block dark:bg-[#1D2144] chauffeur_service"  htmlFor="chauffeur_service">
-                <div className="relative h-[100%]" onClick={express_service}>
-                    <div className="extra-service-card-header">
-                      <div className="card-service-icon"></div>
-                      <div>0 USD</div>
-                    </div>
-                    <h1 className="card-header card-header-service">
-                      Airport Pickup
-                    </h1>
-                    <p className="card-para car-para-sm card-para-service">
-                      Pre-book one way airport transfer from DXB airport to
-                      anywhere in Dubai
-                    </p>
-                  </div>
-                </label>
-                <input id="travel_insurance_service" type="checkbox"/>
-                <label className="extra-service-card w-inline-block dark:bg-[#1D2144] travel_insurance_service" htmlFor="travel_insurance_service">
-                  <div className="relative h-[100%]" onClick={express_service}>
-                  <div className="extra-service-card-header">
-                    <div className="card-service-icon"></div>
-                    <div>0 USD</div>
-                  </div>
-                  <h1 className="card-header card-header-service">
-                    Travel Insurance
-                  </h1>
-                  <p className="card-para car-para-sm card-para-service">
-                    Get travel insurance with your visa
-                  </p>
-                  </div>
-                </label>
+                {
+                  _new_serviceVisas.service?.rows.map((item,index)=>(
+                    <>
+                     <input key={index} id={`express_service_${index}`} type="checkbox"/>
+                          <label key={index} className="extra-service-card w-inline-block dark:bg-[#1D2144] express_service" htmlFor={`express_service_${index}`}>
+                          <div key={index} className="relative h-[100%]" onClick={express_service}>
+                            <div className="extra-service-card-header">
+                                <div className="card-service-icon"></div>
+                                <div>{currency == 'USD' ?(item?.price / exchange_rate).toFixed(2)  : formatCurrencyV2(item?.price.toString())} {currency == 'USD' ? 'USD':'VND'}</div>
+                              </div>
+                              <h1 className="card-header card-header-service">
+                                {item?.name}
+                              </h1>
+                              <p className="card-para car-para-sm card-para-service">
+                                {item?.desc_detail }
+                              </p>
+                          </div>
+                          </label>
+                    </>
+                  ))
+                }
               </div>
               <div>
                 <div className="w-form">

@@ -6,6 +6,7 @@ import { Form } from "@unform/web";
 import { uploadFile } from "@/components/Hero/api";
 import { toast } from "react-toastify";
 import { CustomerType } from "../index";
+import { formatCurrencyV2 } from "@/components/Common/Utils/Helper";
 
 const Step2=({ formStep, setNewCustomer,nextFormStep ,product,customer,register}) =>{
   const [imagePassport, setimagePassport] = useState(false);
@@ -76,7 +77,7 @@ const Step2=({ formStep, setNewCustomer,nextFormStep ,product,customer,register}
               <div className="app-modal-body-header">
                 <h1 className="modal-applicant-header xss:py-3 lg:py-0">Main Applicant</h1>
                 <h1 className="header-left">
-                  Order Total: <span className="order-total">  {currency == 'USD' ?Math.round(product.price / exchange_rate)  : product.price} {currency == 'USD' ? 'USD':'VND'} </span>
+                  Order Total: <span className="order-total">  {currency == 'USD' ? (product.price / exchange_rate).toFixed(2)  : formatCurrencyV2(product.price.toString())} {currency == 'USD' ? 'USD':'VND'} </span>
                 </h1>
               </div>
               <div className="app-modal-body">
@@ -134,6 +135,9 @@ const Step2=({ formStep, setNewCustomer,nextFormStep ,product,customer,register}
                   </button>
                   ) : ('')
                 }
+                 {/* <button className="bp-btn btn-modal-next w-button">
+                    Continue
+                  </button> */}
               </div>
             </div>
           </div>

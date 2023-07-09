@@ -32,6 +32,9 @@ const nextConfig = {
       },
     ];
   },
+  images: {
+    domains: ['http://45.119.87.103:8090']
+  }
 };
 
 module.exports = nextConfig;

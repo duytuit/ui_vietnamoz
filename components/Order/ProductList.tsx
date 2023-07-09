@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { formatCurrencyV2 } from "../Common/Utils/Helper";
 export interface productProps {
   serviceVisas?:any
   national?:any
@@ -68,7 +69,7 @@ const ProductList: FC<productProps> = ({ serviceVisas =null,national }) => {
                   <div className="card-line"></div>
                   <div className="product-price-wr">
                     <h1 className="product-price text-black dark:text-white">
-                    {currency ?Math.round(value.price / serviceVisas?.currencies?.rows[0]?.exchange_rate)  : value.price}
+                    {currency ? (value.price / serviceVisas?.currencies?.rows[0]?.exchange_rate).toFixed(2)  : formatCurrencyV2(value.price.toString())}
                     </h1>
                     <div className="currency">{currency ? 'USD' :'VND'}</div>
                   </div>

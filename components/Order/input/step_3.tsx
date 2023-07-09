@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { Form } from "@unform/web";
 import FormInput from "@/components/Common/FormInput";
 import { Calendar } from "primereact/calendar";
+import { formatCurrencyV2 } from "@/components/Common/Utils/Helper";
 const Step3=({ formStep, setNewCustomer,nextFormStep ,product,customer,register})=> {
   const formRef = useRef();
   async function handleSubmit(data) {
@@ -21,6 +22,8 @@ const Step3=({ formStep, setNewCustomer,nextFormStep ,product,customer,register}
     }
     nextFormStep();
   }
+  const currency = localStorage.getItem('currency');
+  const exchange_rate = parseInt( localStorage.getItem('exchange_rate'));
   return (
     <>
      <Form ref={formRef} onSubmit={handleSubmit}>
@@ -28,7 +31,7 @@ const Step3=({ formStep, setNewCustomer,nextFormStep ,product,customer,register}
             <div className="app-modal-body-header">
               <h1 className="modal-applicant-header xss:py-3 lg:py-0">Main Applicant</h1>
               <h1 className="header-left">
-                Order Total: <span className="order-total"> 140 USD </span>
+                Order Total: <span className="order-total">  {currency == 'USD' ? (product.price / exchange_rate).toFixed(2)  : formatCurrencyV2(product.price.toString())} {currency == 'USD' ? 'USD':'VND'} </span>
               </h1>
             </div>
             <div className="app-modal-body">

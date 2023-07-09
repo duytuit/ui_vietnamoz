@@ -39,3 +39,12 @@ export const convertData = (body = {}) => {
     })
     return body
 }
+export const formatCurrency=(input) =>{
+    var number = input.value.replace(/[,.]/g, '');
+    return new Intl.NumberFormat().format(number).toString().replace(/\./g, ',');
+}
+
+export const formatCurrencyV2=(value) =>{
+    var number = value.replace(/[,.]/g, '');
+    return new Intl.NumberFormat().format(number).replace(/\./g, ',');
+}
