@@ -14,7 +14,7 @@ import { toast } from "react-toastify";
 // if (window.performance) {
 //   console.info("window.performance works fine on this browser");
 // }
-if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+if (performance?.navigation?.type == performance?.navigation?.TYPE_RELOAD) {
   console.info( "This page is reloaded" );
   localStorage.removeItem('register')
 } else {
