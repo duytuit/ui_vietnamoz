@@ -68,8 +68,8 @@ const Order = () => {
   const [customer, setCustomer] = useState({
     country_id:782,
     country:'Vietnam',
-    national_id:national.categoryId,
-    national:national.name, 
+    national_id:national?.categoryId,
+    national:national?.name, 
   });
   const [register, setRegister] = useState<RegisterType>({
     customers: [],
