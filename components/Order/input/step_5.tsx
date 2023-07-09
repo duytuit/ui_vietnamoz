@@ -1,5 +1,5 @@
 "use client"
-import { useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import { useOder } from "../context/orderContext";
 import { Checkbox } from 'primereact/checkbox';  
 import { Form } from "@unform/web";
@@ -8,37 +8,68 @@ import { formatCurrencyV2 } from "@/components/Common/Utils/Helper";
 const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register})=> {
     const [isShowExpressService, setShowExpressService] = useState(false);
     const [chauffeurService, setChauffeurService] = useState(false);
+    const [active, setActive] = useState(false);
     const [travelInsuranceService, setTravelInsuranceService] = useState(false);
+    const [serviceTotal, setServiceTotal] = useState(0);
     const formRef = useRef();
 
-    async function handleSubmit(data) {
-      console.log(data);
-      nextFormStep();
+    async function handleSubmit(event) {
+      console.log(event);
+      console.log('đã đóng');
+      setActive(true)
+      setTimeout(() => {
+        setActive(false)
+        console.log('đã mở');
+      }, 4000)
+      const register = localStorage.getItem('register')
+      let __register = JSON.parse(register)
+      console.log('đang thực thi',__register);
+      var elements = document.getElementsByClassName("input_express_service");
+      let services=[];
+      for (let i=0; i<elements.length; i++) {
+        const element = elements[i] as HTMLElement;
+        if(element.checked == true){
+          const service =JSON.parse(element.value);
+          console.log(service);
+          services.push(service)
+        }
+      }
+      __register.services = services;
+      console.log('__register',JSON.stringify(__register));
+      
+     
+       
     }
     let _register:any = localStorage.getItem('register')
     let _new_register = JSON.parse(_register)
     let _serviceVisas:any = localStorage.getItem('serviceVisas')
     let _new_serviceVisas = JSON.parse(_serviceVisas)
-    // if(_register){
-    //  const _new_register = JSON.parse(_register)
-    //  _new_register.product =event
-    //  localStorage.setItem('register',JSON.stringify(_new_register))
-    // }else{
-    //   register.product =event
-    //   localStorage.setItem('register',JSON.stringify(register))
-    // }
+   
     const currency = localStorage.getItem('currency');
     const exchange_rate = parseInt( localStorage.getItem('exchange_rate'));
-   let sumery = (currency == 'USD' ? (_new_register.product.price / exchange_rate)  : _new_register.product.price)
-  const express_service = (event) => {
+   let sumery = (currency == 'USD' ? (_new_register.product.price / exchange_rate)  : _new_register.product.price)*_new_register.customers.length
+    
+    useEffect(()=>{
+      setServiceTotal(sumery);
+    },[])
+    console.log('serviceTotal',serviceTotal);
+    
+  const express_service = (item,event) => {
+    // console.log(event);
+    // console.log(item);
+    
     const mydivclass = event.target.closest(".extra-service-card").querySelector('.relative') as HTMLElement;
     //const mydivclass = event.target.closest(".extra-service-card").querySelector('.card-service-icon');
     console.log(mydivclass);
+    const price = (currency == 'USD' ? (item.price / exchange_rate)  : item.price);
+    console.log('price',price);
     
     if(mydivclass.classList.contains('text-white')) {
       console.log('có');
+      setServiceTotal(serviceTotal-price)
       mydivclass.classList.remove('text-white')
     }else{
+      setServiceTotal(serviceTotal+price)
       console.log('khong');
       mydivclass.classList.add('text-white')
     }
@@ -53,32 +84,11 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
   };
   return (
     <>
-    <Form ref={formRef} onSubmit={handleSubmit}>
       <div className={`${formStep === 4 ? "block" : "hidden"}`}>
         <div className="app-modal-column-group app-modal-column-group-checkout">
           <div className="app-modal-column app-modal-column-checkout alternative-column">
             <div className="app-column-header no-margin">ORDER SUMMARY</div>
             <div className="table-container">
-              {/* <div className="flex-row">
-                    <div className="table-header">Visa Type</div>
-                    <div className="table-header table-header-middle">QTY </div>
-                    <div className="table-header table-header-right">Price</div>
-                  </div>
-                  <div className="flex-row">
-                    <div className="table-text-left">
-                      96 hours transit visa - Single Entry Visa
-                    </div>
-                    <div className="table-text-middle">0</div>
-                    <div className="table-text-right">140 </div>
-                  </div>
-                  <div className="dotted-line"></div>
-                  <div className="flex-row">
-                    <div className="table-header">Subtotal</div>
-                    <div className="table-header table-header-right">
-                      
-                      USD 0
-                    </div>
-                  </div> */}
               <table className="flex-no-wrap my-5 flex w-full flex-row !justify-center rounded-lg sm:bg-white sm:shadow-lg">
                 <thead className="text-white">
                   <tr className="bg-teal-400 flex-no wrap mb-2 flex flex-col rounded-l-lg sm:mb-0 sm:table-row sm:rounded-none">
@@ -89,14 +99,14 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
                 </thead>
                 <tbody className="sm:flex-none">
                   <tr className="flex-no wrap mb-2 flex flex-col sm:mb-0 sm:table-row">
-                    <td className="hover:bg-gray-100 border-s-fuchsia-500 dark:bg-[#1D2144] p-3">
+                    <td className="border-s-fuchsia-500 dark:bg-[#1D2144] p-3">
                     {_new_register.product?.name}
                     </td>
-                    <td className="hover:bg-gray-100 truncate border-s-fuchsia-500 dark:bg-[#1D2144] p-3">
+                    <td className="truncate border-s-fuchsia-500 dark:bg-[#1D2144] p-3">
                     {_new_register.customers.length}
                     </td>
-                    <td className="hover:bg-gray-100 text-red-400 hover:text-red-600 cursor-pointer border-s-fuchsia-500 dark:bg-[#1D2144] p-3 hover:font-medium">
-                      {currency == 'USD' ?(sumery*_new_register.customers.length).toFixed(2):formatCurrencyV2((sumery*_new_register.customers.length).toString())} {currency == 'USD' ? 'USD':'VND'}
+                    <td className="text-red-400 border-s-fuchsia-500 dark:bg-[#1D2144] p-3">
+                      {currency == 'USD' ?sumery.toFixed(2):formatCurrencyV2(sumery.toString())} {currency == 'USD' ? 'USD':'VND'}
                     </td>
                   </tr>
                 
@@ -107,12 +117,12 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
                 {
                   _new_serviceVisas.service?.rows.map((item,index)=>(
                     <>
-                     <input key={index} id={`express_service_${index}`} type="checkbox"/>
-                          <label key={index} className="extra-service-card w-inline-block dark:bg-[#1D2144] express_service" htmlFor={`express_service_${index}`}>
-                          <div key={index} className="relative h-[100%]" onClick={express_service}>
+                     <input className="input_express_service" id={`express_service_${index}`} type="checkbox" value={JSON.stringify(item)}/>
+                          <label className="extra-service-card w-inline-block dark:bg-[#1D2144] express_service" htmlFor={`express_service_${index}`}>
+                          <div key={index} className="relative h-[100%]" onClick={()=>express_service(item,event)}>
                             <div className="extra-service-card-header">
                                 <div className="card-service-icon"></div>
-                                <div>{currency == 'USD' ?(item?.price / exchange_rate).toFixed(2)  : formatCurrencyV2(item?.price.toString())} {currency == 'USD' ? 'USD':'VND'}</div>
+                                <div >{currency == 'USD' ?(item?.price / exchange_rate).toFixed(2)  : formatCurrencyV2(item?.price.toString())} {currency == 'USD' ? 'USD':'VND'}</div>
                               </div>
                               <h1 className="card-header card-header-service">
                                 {item?.name}
@@ -145,19 +155,18 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
               <div className="flex-row">
                 <div className="table-header table-header-large">Total</div>
                 <div className="table-header table-header-right table-header-large">
-                  USD 0
+                { currency == 'USD' ? serviceTotal.toFixed(2):formatCurrencyV2(serviceTotal.toString())} {currency == 'USD' ? 'USD':'VND'}
                 </div>
               </div>
             </div>
             <div className="app-modal-footer">
-              <button className="bp-btn btn-modal-next w-button">
+              <button className="bp-btn btn-modal-next w-button" disabled={active} onClick={handleSubmit}>
                 PAYMENT
               </button>
             </div>
           </div>
         </div>
       </div>
-      </Form>
     </>
   );
 }
