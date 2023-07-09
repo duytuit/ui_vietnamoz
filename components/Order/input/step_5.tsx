@@ -27,7 +27,7 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
       var elements = document.getElementsByClassName("input_express_service");
       let services=[];
       for (let i=0; i<elements.length; i++) {
-        const element = elements[i] as HTMLElement;
+        const element:any = elements[i] as HTMLElement;
         if(element.checked == true){
           const service =JSON.parse(element.value);
           console.log(service);
