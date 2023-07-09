@@ -23,11 +23,14 @@ if (performance?.navigation?.type == performance?.navigation?.TYPE_RELOAD) {
 } else {
   console.info( "This page is not reloaded");
 }
-document.addEventListener("beforeunload", function (e) {      
-  if (typeof window !== 'undefined') {
-    localStorage.removeItem('register')
-  }  
-});
+if (typeof document !== 'undefined') {
+  document.addEventListener("beforeunload", function (e) {      
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('register')
+    }  
+  });
+}
+
 export interface RegisterType {
   customers: CustomerType[];
   services: any;
