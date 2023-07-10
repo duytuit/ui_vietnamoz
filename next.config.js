@@ -35,12 +35,14 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/:slug*",
+        source: "/payment/:slug*",
         destination: 'https://alepay-v3-sandbox.nganluong.vn/:slug*',
+        permanent:false
       },
       {
-        source: "/:slug*",
+        source: "/payment/:slug*",
         destination: 'https://alepay-v3.nganluong.vn/:slug*',
+        permanent:false
       }
     ];
   },
