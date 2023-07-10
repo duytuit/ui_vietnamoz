@@ -17,6 +17,12 @@ export async function fetchProduct(id:any) {
     const response =  await clientApi.get(`/system/products/${id}`);
     if (response.data?.code == 200) return response.data;
 };
+export async function fetchRegisteVisa(params:string,data) {
+    // params = convertData(params)
+    // console.log(params);
+    const response =  await postData(`vietnamoz/visa/create?${params}`,data);
+    return response.data;
+};
 /**
  * upload data file
  * @param {Object} data - data object.

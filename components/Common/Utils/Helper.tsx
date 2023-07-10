@@ -48,3 +48,11 @@ export const formatCurrencyV2=(value) =>{
     var number = value.replace(/[,.]/g, '');
     return new Intl.NumberFormat().format(number).replace(/\./g, ',');
 }
+export const convertObjToParam=(body) =>{
+    return Object.keys(body)
+      .sort()
+      .map(function (key) {
+        return key + '=' + body[key];
+      })
+      .join('&');
+}

@@ -32,6 +32,18 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/:slug*",
+        destination: 'https://alepay-v3-sandbox.nganluong.vn/:slug*',
+      },
+      {
+        source: "/:slug*",
+        destination: 'https://alepay-v3.nganluong.vn/:slug*',
+      }
+    ];
+  },
   images: {
     domains: ['http://45.119.87.103:8090']
   }

@@ -23,6 +23,7 @@ const Step1=({ formStep,setNewCustomer, nextFormStep ,product ,customer,register
   const handleCheckDisclamer_2 =()=>{
     setcheckConfirm2(!checkConfirm2)
   }
+  if (typeof window !== 'undefined') {
   let _register = localStorage.getItem('register')
   if(_register){
    const _new_register = JSON.parse(_register)
@@ -32,6 +33,7 @@ const Step1=({ formStep,setNewCustomer, nextFormStep ,product ,customer,register
     register.product =product
     localStorage.setItem('register',JSON.stringify(register))
   }
+ }
   return (
     <>
       <Form ref={formRef} onSubmit={handleSubmit}>

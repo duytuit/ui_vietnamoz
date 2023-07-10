@@ -84,7 +84,7 @@ const Order = () => {
   useMemo(async () => {
     const productId = param.get("productId");
     const product = await fetchProduct(productId);
-    if (product.data == null) {
+    if (product?.data == null) {
       toast("Data not found.", {
         hideProgressBar: true,
         autoClose: 3000,

@@ -4,15 +4,14 @@ import { useOder } from "../context/orderContext";
 import { Checkbox } from 'primereact/checkbox';  
 import { Form } from "@unform/web";
 import FormInput from "@/components/Common/FormInput";
-import { formatCurrencyV2 } from "@/components/Common/Utils/Helper";
+import { convertObjToParam, formatCurrencyV2 } from "@/components/Common/Utils/Helper";
+import { fetchRegisteVisa } from "@/components/Hero/api";
+import { redirect } from "next/navigation";
 const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register})=> {
-    const [isShowExpressService, setShowExpressService] = useState(false);
     const [chauffeurService, setChauffeurService] = useState(false);
     const [active, setActive] = useState(false);
     const [travelInsuranceService, setTravelInsuranceService] = useState(false);
     const [serviceTotal, setServiceTotal] = useState(0);
-    const formRef = useRef();
-
     async function handleSubmit(event) {
       console.log(event);
       console.log('đã đóng');
@@ -35,10 +34,23 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
         }
       }
       __register.services = services;
+      __register.currency = localStorage.getItem('currency');
+      __register.exchange_rate = localStorage.getItem('exchange_rate');
       console.log('__register',JSON.stringify(__register));
-      
-     
-       
+      const param={
+        projectId:product.projectId
+      }
+      const data={
+        register:__register
+      }
+      const rs_register = await fetchRegisteVisa(convertObjToParam(param),data)
+      if(rs_register.code = '000'){
+        // redirect(rs_register.checkoutUrl);
+        if(rs_register.checkoutUrl){
+            // localStorage.removeItem('register')
+            window.location.href = rs_register.checkoutUrl;
+        }
+      }
     }
     let _register:any = localStorage.getItem('register')
     let _new_register = JSON.parse(_register)
