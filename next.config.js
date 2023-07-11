@@ -30,6 +30,10 @@ const nextConfig = {
           // }
         ],
       },
+      {
+        source: "/client/upload/:slug*",
+        destination: `${process.env.UPLOAD_CDN}upload/:slug*`, // Matched parameters can be used in the destination
+      },
     ];
   },
   async redirects() {
