@@ -15,7 +15,7 @@ const formatOptionLabel = ({ value, name ,slug ,id,sdfdsfdsfsdfds}) => (
   <div style={{ display: "flex" }}>
     <div style={{ marginLeft: "10px" }}>
       <Image
-        src={`/client/upload/2023-06-29/${slug}.svg`}
+        src={`/client/upload/2023-07-10/${slug}.svg`}
         alt="author"
         width="40"
         height="40"
