@@ -12,7 +12,7 @@ const TransactionResult = (props) => {
           <div className="mb-8 mt-20 w-full md:mb-12 lg:mb-16">
             <h1 className="bp-h1 black dark:text-white">Payment Transaction</h1>
           </div>
-          <table>
+          {/* <table>
             <tbody>
               <tr>
                 <td>
@@ -48,7 +48,6 @@ const TransactionResult = (props) => {
                         </td>
                         <td>
                           <span>
-                            {/* Email: <a href="mailto:tund@dxmb.vn" target="_blank">duytu89@gmail.com</a><br/> */}
                             Số điện thoại: 0366961008
                             <br />
                             Địa chỉ: Hà nội
@@ -107,7 +106,7 @@ const TransactionResult = (props) => {
                 </td>
               </tr>
             </tbody>
-          </table>
+          </table> */}
         </div>
       </section>
     </>
