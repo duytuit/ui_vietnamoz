@@ -23,6 +23,10 @@ export async function fetchRegisteVisa(params:string,data) {
     const response =  await postData(`vietnamoz/visa/create?${params}`,data);
     return response.data;
 };
+export async function fetchCreateReceipt(params:string,data) {
+    const response =  await postData(`vietnamoz/visa/receipt/create?${params}`,data);
+    return response.data;
+};
 /**
  * upload data file
  * @param {Object} data - data object.

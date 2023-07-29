@@ -56,3 +56,7 @@ export const convertObjToParam=(body) =>{
       })
       .join('&');
 }
+
+export const stringToTime=(value) =>{
+    return new Date(value).toUTCString();
+}

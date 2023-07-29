@@ -1,8 +1,9 @@
 "use client"
 import FormInput from "@/components/Common/FormInput";
-import { formatCurrencyV2 } from "@/components/Common/Utils/Helper";
+import { convertObjToParam, formatCurrencyV2 } from "@/components/Common/Utils/Helper";
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation'
+import { fetchRegisteVisa } from "@/components/Hero/api";
 const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register})=> {
     const [chauffeurService, setChauffeurService] = useState(false);
     const [active, setActive] = useState(false);
@@ -33,8 +34,14 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
       __register.services = services;
       __register.currency = localStorage.getItem('currency');
       __register.exchange_rate = localStorage.getItem('exchange_rate');
-      localStorage.setItem('register',JSON.stringify(__register))
-      console.log('__register',JSON.stringify(__register));
+      const param={
+        projectId:product.projectId
+      }
+      const data={
+        register:__register
+      }
+      const rs_register = await fetchRegisteVisa(convertObjToParam(param),data)
+      localStorage.setItem('register',JSON.stringify(rs_register))
       router.push('/transaction/result')
     }
     let _register:any = localStorage.getItem('register')
