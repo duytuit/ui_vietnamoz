@@ -1,5 +1,5 @@
 "use client"
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FormInput from "@/components/Common/FormInput";
 import { useOder } from "../context/orderContext";
 import { Form } from "@unform/web";
@@ -21,6 +21,11 @@ const Step2=({ formStep, setNewCustomer,nextFormStep ,product,customer,register}
     });
     nextFormStep();
   }
+  useEffect(()=>{
+    setimagePassport(false)
+    setimagePhotograph(false)
+    setimageNationalCrad(false)
+  },[formStep])
   const currency = localStorage.getItem('currency');
   const exchange_rate = parseInt( localStorage.getItem('exchange_rate'));
 
@@ -29,7 +34,7 @@ const Step2=({ formStep, setNewCustomer,nextFormStep ,product,customer,register}
       files: event.target.files[0]
     }
     const rs_upload = await uploadFile({files})
-    if(rs_upload.data != null){
+    if(rs_upload?.data != null){
       setimagePassport(true)
         toast('upload complete.', { hideProgressBar: true, autoClose: 3000, type: 'success' })
         const fileName = rs_upload.data[0].fileName;
@@ -43,7 +48,7 @@ const Step2=({ formStep, setNewCustomer,nextFormStep ,product,customer,register}
       files: event.target.files[0]
     }
     const rs_upload = await uploadFile({files})
-    if(rs_upload.data != null){
+    if(rs_upload?.data != null){
       setimagePhotograph(true)
         toast('upload complete.', { hideProgressBar: true, autoClose: 3000, type: 'success' })
         const fileName = rs_upload.data[0].fileName;
@@ -58,7 +63,7 @@ const Step2=({ formStep, setNewCustomer,nextFormStep ,product,customer,register}
       files: event.target.files[0]
     }
     const rs_upload = await uploadFile({files})
-    if(rs_upload.data != null){
+    if(rs_upload?.data != null){
       setimageNationalCrad(true)
         toast('upload complete.', { hideProgressBar: true, autoClose: 3000, type: 'success' })
         const fileName = rs_upload.data[0].fileName;

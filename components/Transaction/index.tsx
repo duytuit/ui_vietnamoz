@@ -1,112 +1,127 @@
 "use client";
+import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { formatCurrencyV2 } from "../Common/Utils/Helper";
 
 const TransactionResult = (props) => {
   const param = useSearchParams();
   console.log("ket_qua", param.toString());
+  const [show, setShow] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [ErrorMessage, setErrorMessage] = useState("");
+  const [orderID, setOrderID] = useState(false);
+  let _register: any = localStorage.getItem("register");
+  let _new_register = JSON.parse(_register);
+  let _serviceVisas: any = localStorage.getItem("serviceVisas");
+  let _new_serviceVisas = JSON.parse(_serviceVisas);
+
+  const currency = localStorage.getItem("currency");
+  const exchange_rate = parseInt(localStorage.getItem("exchange_rate"));
+  let sumery =
+    (currency == "USD"
+      ? _new_register.product.price / exchange_rate
+      : _new_register.product.price) * _new_register.customers.length;
+
+  // creates a paypal order
+  const createOrder = (data, actions) => {
+    return actions.order
+      .create({
+        purchase_units: [
+          {
+            description: "Sunflower",
+            amount: {
+              currency_code: "USD",
+              value: 20,
+            },
+          },
+        ],
+      })
+      .then((orderID) => {
+        setOrderID(orderID);
+        return orderID;
+      });
+  };
+
+  // check Approval
+  const onApprove = (data, actions) => {
+    return actions.order.capture().then(function (details) {
+      const { payer } = details;
+      setSuccess(true);
+    });
+  };
+
+  //capture likely error
+  const onError = (data, actions) => {
+    setErrorMessage("An Error occured with your payment ");
+  };
+
+  useEffect(() => {
+      if (success) {
+          alert("Payment successful!!");
+          console.log('Order successful . Your order id is--', orderID);
+          location.reload();
+      }
+  },[success]);
   return (
     <>
       <section className="relative mb-[120px] pt-16 md:pt-20 lg:pt-28">
         <div className="container">
-          <div className="mb-8 mt-20 w-full md:mb-12 lg:mb-16">
-            <h1 className="bp-h1 black dark:text-white">Payment Transaction</h1>
+          <div className="mb-8 mt-2 w-full md:mb-8 lg:mb-8">
+            <h1 className="bp-h1 black dark:text-white">Info Payment</h1>
           </div>
-          {/* <table>
-            <tbody>
-              <tr>
-                <td>
-                  <span>Giao dịch nhận thanh toán</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span>
-                    Dear, <span className="uppercase">Nguyễn Duy Tu</span>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span>
-                  Bạn đã thực hiện giao dịch thanh toán thành công, vui lòng xem chi tiết giao dịch dưới đây.
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td align="left">
-                          <span>
-                            Khách hàng:
-                            <br />
-                            <span className="uppercase">Nguyễn Duy Tú</span>
-                            <br />
-                          </span>
-                        </td>
-                        <td>
-                          <span>
-                            Số điện thoại: 0366961008
-                            <br />
-                            Địa chỉ: Hà nội
-                            <br />
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td align="left">Nội dung thanh toán</td>
-                        <td>E Visa</td>
-                      </tr>
-                      <tr>
-                        <td align="left">Mã giao dịch</td>
-                        <td>VNE43543564355</td>
-                      </tr>
-                      <tr>
-                        <td align="left">Mã đơn hàng</td>
-                        <td>VNE43543564355</td>
-                      </tr>
-                      <tr>
-                        <td>&nbsp;</td>
-                        <td align="left">Giá trị đơn hàng</td>
-                        <td align="right">
-                          <strong>1000000</strong> VND
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>&nbsp;</td>
-                        <td align="left">Số tiền thanh toán</td>
-                        <td align="right">
-                          <strong>10000000</strong> VND
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>&nbsp;</td>
-                        <td align="left">Thời gian</td>
-                        <td>12/12/2023</td>
-                      </tr>
-                      <tr>
-                        <td>&nbsp;</td>
-                        <td align="left">Trạng thái giao dịch</td>
-                        <td>Thành công</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  <div>
-                    <a href="/">Nhấn vào đây để trở về trang chủ</a>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table> */}
+          <div className="container mx-auto flex flex-wrap px-2 py-4">
+            <div className="h-full p-4 xss:w-full lg:flex lg:w-2/3 lg:items-center lg:justify-center">
+              <table className="flex-no-wrap flex w-full flex-row !justify-center rounded-lg sm:bg-white sm:shadow-lg">
+                <thead className="text-white">
+                  <tr className="bg-teal-400 flex-no wrap mb-2 flex flex-col rounded-l-lg sm:mb-0 sm:table-row sm:rounded-none">
+                    <th className="border-s-fuchsia-500 p-3 text-left text-black dark:bg-[#1D2144] dark:text-white">
+                      Visa Type
+                    </th>
+                    <th className="border-s-fuchsia-500 p-3 text-left text-black dark:bg-[#1D2144] dark:text-white">
+                      QTY
+                    </th>
+                    <th className="border-s-fuchsia-500 p-3 text-left text-black dark:bg-[#1D2144] dark:text-white">
+                      Price
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="sm:flex-none">
+                  <tr className="flex-no wrap mb-2 flex flex-col sm:mb-0 sm:table-row">
+                    <td className="border-s-fuchsia-500 p-3 dark:bg-[#1D2144]">
+                      {_new_register.product?.name}
+                    </td>
+                    <td className="border-s-fuchsia-500 truncate p-3 dark:bg-[#1D2144]">
+                      {_new_register.customers.length}
+                    </td>
+                    <td className="text-red-400 border-s-fuchsia-500 p-3 dark:bg-[#1D2144]">
+                      {currency == "USD"
+                        ? sumery.toFixed(2)
+                        : formatCurrencyV2(sumery.toString())}{" "}
+                      {currency == "USD" ? "USD" : "VND"}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="h-full p-4 xss:w-full lg:flex lg:w-1/3 lg:items-center lg:justify-center">
+              <PayPalScriptProvider
+                options={{
+                  "client-id":
+                    "AUt3DenD-IXkgW4T7uzdolPIhZVKSTgLE1Ws0nv0UN0pWgb5syjUivgzB8MMHYagu5Tm5a5eJ48cCszG",
+                }}
+              >
+                <div className="wrapper">
+                  <PayPalButtons
+                      style={{ layout: "vertical" }}
+                      createOrder={createOrder}
+                      onApprove={onApprove}
+                    />
+                </div>
+              </PayPalScriptProvider>
+            </div>
+          </div>
         </div>
       </section>
     </>

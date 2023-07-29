@@ -2,8 +2,8 @@ import { classNames } from "primereact/utils";
 import FormInput from "./FormInput";
 import { InputTextarea } from "primereact/inputtextarea";
 import { Calendar } from "primereact/calendar";
-import { Dropdown } from "primereact/dropdown";
 import { InputSwitch } from "primereact/inputswitch";
+import { Dropdown } from "primereact/dropdown";
 
 export const CalendarForm = (props) => {
     const { label, ...prop } = props;

@@ -1,14 +1,17 @@
 "use client"
+import { use, useEffect, useRef, useState } from "react";
+import { useOder } from "../context/orderContext";
+import { Checkbox } from 'primereact/checkbox';  
+import { Form } from "@unform/web";
 import FormInput from "@/components/Common/FormInput";
-import { formatCurrencyV2 } from "@/components/Common/Utils/Helper";
-import { useState, useEffect } from "react";
-import { useRouter } from 'next/navigation'
+import { convertObjToParam, formatCurrencyV2 } from "@/components/Common/Utils/Helper";
+import { fetchRegisteVisa } from "@/components/Hero/api";
+import { redirect } from "next/navigation";
 const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register})=> {
     const [chauffeurService, setChauffeurService] = useState(false);
     const [active, setActive] = useState(false);
     const [travelInsuranceService, setTravelInsuranceService] = useState(false);
     const [serviceTotal, setServiceTotal] = useState(0);
-    const router = useRouter()
     async function handleSubmit(event) {
       console.log(event);
       console.log('đã đóng');
@@ -16,7 +19,7 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
       setTimeout(() => {
         setActive(false)
         console.log('đã mở');
-      }, 2000)
+      }, 4000)
       const register = localStorage.getItem('register')
       let __register = JSON.parse(register)
       console.log('đang thực thi',__register);
@@ -33,9 +36,21 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
       __register.services = services;
       __register.currency = localStorage.getItem('currency');
       __register.exchange_rate = localStorage.getItem('exchange_rate');
-      localStorage.setItem('register',JSON.stringify(__register))
       console.log('__register',JSON.stringify(__register));
-      router.push('/transaction/result')
+      const param={
+        projectId:product.projectId
+      }
+      const data={
+        register:__register
+      }
+      const rs_register = await fetchRegisteVisa(convertObjToParam(param),data)
+      if(rs_register.code = '000'){
+        // redirect(rs_register.checkoutUrl);
+        if(rs_register.checkoutUrl){
+            // localStorage.removeItem('register')
+            window.location.href = rs_register.checkoutUrl;
+        }
+      }
     }
     let _register:any = localStorage.getItem('register')
     let _new_register = JSON.parse(_register)
@@ -52,6 +67,8 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
     console.log('serviceTotal',serviceTotal);
     
   const express_service = (item,event) => {
+    // console.log(event);
+    // console.log(item);
     
     const mydivclass = event.target.closest(".extra-service-card").querySelector('.relative') as HTMLElement;
     //const mydivclass = event.target.closest(".extra-service-card").querySelector('.card-service-icon');
@@ -156,7 +173,7 @@ const Step5=({ formStep,setNewCustomer, nextFormStep ,product,customer,register}
             </div>
             <div className="app-modal-footer">
               <button className="bp-btn btn-modal-next w-button" disabled={active} onClick={handleSubmit}>
-                CONTINUE
+                PAYMENT
               </button>
             </div>
           </div>

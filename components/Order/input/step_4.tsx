@@ -125,7 +125,7 @@ const Step4 = ({
                               <div
                                 className="applicant-avatar ng-star-inserted"
                                 style={{
-                                  backgroundImage: `url(http://45.119.87.103:8090${item.avatar})`,
+                                  backgroundImage: `url(${ process.env.UPLOAD_CDN}${item.avatar})`,
                                 }}
                               ></div>
                               <h1 className="applicant-avatar-name">

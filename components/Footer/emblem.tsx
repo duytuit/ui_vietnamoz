@@ -1,7 +1,14 @@
+"use client"
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Emblem = () => {
+  const _scrollTop =()=>{
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
   return (
     <>
      <div className="ng-tns-c4-5 pt-16 md:pt-20 lg:pt-24">
@@ -20,7 +27,7 @@ const Emblem = () => {
                   </div>
               </div>
               <div className="h-full p-4 xss:w-full lg:w-1/2 lg:flex lg:justify-center lg:items-center">
-              <a className="flex justify-center py-3 px-7 cursor-pointer text-base font-bold border-[1px] rounded-[2rem] text-white hover:opacity-70 dark:text-white btn-cta">
+              <a onClick={_scrollTop} className="flex justify-center py-3 px-7 cursor-pointer text-base font-bold border-[1px] rounded-[2rem] text-white hover:opacity-70 dark:text-white btn-cta">
                   apply now &nbsp;&nbsp; <FontAwesomeIcon icon={faCheck} height={25} width={25} />
                 </a>
               </div>

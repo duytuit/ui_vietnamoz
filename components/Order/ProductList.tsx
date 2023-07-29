@@ -45,7 +45,7 @@ const ProductList: FC<productProps> = ({ serviceVisas =null,national }) => {
             <input id="multiple-entry" name="radio-category" type="radio" />
             <label htmlFor="multiple-entry" onClick={() => handleEntry(2)}>Multiple Entry</label>
           </div>
-            <div className="currency-switcher-wr ng-star-inserted xss:w-full lg:flex lg:w-auto lg:items-center lg:justify-center"  >
+            {/* <div className="currency-switcher-wr ng-star-inserted xss:w-full lg:flex lg:w-auto lg:items-center lg:justify-center"  >
               <label className="currency-default"  htmlFor="currency-switcher">
                 USD
                 <label className="switcher" htmlFor="currency-switcher">
@@ -54,7 +54,7 @@ const ProductList: FC<productProps> = ({ serviceVisas =null,national }) => {
                 <span>VND</span>
               </label>
               </label>
-            </div>
+            </div> */}
           </div>
         </>
       ) : ('')}

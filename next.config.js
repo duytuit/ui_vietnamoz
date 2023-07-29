@@ -51,7 +51,7 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ['http://45.119.87.103:8090']
+    domains: ['http://103.237.144.38:8090','cdn.pixabay.com']
   }
 };
 
