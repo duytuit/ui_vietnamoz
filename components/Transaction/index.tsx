@@ -10,16 +10,22 @@ import { useRouter } from 'next/navigation'
 import { fetchCreateReceipt } from "../Hero/api";
 
 const TransactionResult = (props) => {
-    const router = useRouter()
+  const router = useRouter()
   const [show, setShow] = useState(false);
   const [showHtml, setshowHtml] = useState('');
   const [success, setSuccess] = useState(false);
   const [ErrorMessage, setErrorMessage] = useState("");
   const [orderID, setOrderID] = useState(false);
-  let _register: any = localStorage.getItem("register");
-  let _new_register = JSON.parse(_register);
-  let _serviceVisas: any = localStorage.getItem("serviceVisas");
-  let _new_serviceVisas = JSON.parse(_serviceVisas);
+  let _register:any =null
+  let _new_register=null
+  let _serviceVisas: any=null
+  let _new_serviceVisas = null
+  if (typeof window !== 'undefined') {
+     _register = localStorage.getItem("register");
+     _new_register = JSON.parse(_register);
+     _serviceVisas = localStorage.getItem("serviceVisas");
+     _new_serviceVisas = JSON.parse(_serviceVisas);
+ } 
   useEffect(()=>{
     if(_new_register){
         const html = render(<TemaplateEmail bill={_new_register} />, {
