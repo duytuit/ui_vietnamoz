@@ -97,7 +97,7 @@ const TransactionResult = (props) => {
                 <>
                   <PayPalScriptProvider
                     options={{
-                      "client-id":
+                      "clientId":
                         "AUt3DenD-IXkgW4T7uzdolPIhZVKSTgLE1Ws0nv0UN0pWgb5syjUivgzB8MMHYagu5Tm5a5eJ48cCszG",
                     }}
                   >
