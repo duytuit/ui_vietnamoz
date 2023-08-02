@@ -43,6 +43,7 @@ const SearchLocation = () => {
   const { data: serviceVisas, isLoading : isLoading_ServiceVisas } = useQuery(['ServiceVisas',country],()=> fetchServiceVisas(country));
   const [categories, setCategories] = useState<any>({
     projectId:2,
+    option:null
   });
   const { data: list_categories,isLoading:isLoading_Categories } = useQuery(['Categories',categories],()=> fetchCategory(categories));
   useEffect(()=>{
