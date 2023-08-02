@@ -6,10 +6,11 @@ import Select,{ components } from "react-select";
 import Image from "next/image";
 import { countries } from '../Common/Utils/countries';
 import ProductList from '../Order/ProductList';
-import { useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { fetchCategory, fetchServiceVisas } from './api';
 import { toast } from 'react-toastify';
+import { useSearchParams } from 'next/navigation';
 
 const formatOptionLabel = ({ value, name ,slug ,id,sdfdsfdsfsdfds}) => (
   <div style={{ display: "flex" }}>
@@ -29,17 +30,30 @@ const formatOptionLabel = ({ value, name ,slug ,id,sdfdsfdsfsdfds}) => (
   </div>
 );
 const SearchLocation = () => {
+
+  const searchParams= useSearchParams();
+  const [value,setValue]=useState<any>(null)
   const [country, setCountry] = useState({
      projectId:2,
-     categoryId:1,
+     categoryId:searchParams.get('id')||1,
      remark:'usd',
      name:null,
   });
   const { data: serviceVisas, isLoading : isLoading_ServiceVisas } = useQuery(['ServiceVisas',country],()=> fetchServiceVisas(country));
-  const [categories, setCategories] = useState({
-    projectId:2
+  const [categories, setCategories] = useState<any>({
+    projectId:2,
   });
   const { data: list_categories,isLoading:isLoading_Categories } = useQuery(['Categories',categories],()=> fetchCategory(categories));
+  useEffect(()=>{
+     const id =  searchParams.get('id')
+    if( list_categories && id){
+      const _category = list_categories.find( item =>item.id === parseInt(id));
+        if(_category){
+          console.log(_category);
+          setValue(_category)
+        }
+    }
+   },[])
     // console.log('list_categories',list_categories);
       const customStyles = {
         dropdownIndicator: (base: any) => ({
@@ -93,12 +107,11 @@ const SearchLocation = () => {
         );
       };
       const getServiceVisa = async (event)=>{
-        // const category = list_categories.find( item =>item.slug === event.value);
-        // if(category){
-        // }
         if(event){
           setCountry({...country,categoryId:event.id,name:event.name});
+          setValue(event)
         }
+
       }
       
     return (
@@ -108,6 +121,7 @@ const SearchLocation = () => {
           <Select
                 formatOptionLabel={formatOptionLabel}
                 options={list_categories}
+                value={value}
                 getOptionLabel ={(option) => `${option.name}`}
                 getOptionValue ={(option) => `${option.id}`}
                 components={{ClearIndicator,DropdownIndicator}}
