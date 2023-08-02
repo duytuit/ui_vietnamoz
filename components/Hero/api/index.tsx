@@ -14,7 +14,7 @@ export async function fetchCategory(params:any) {
     if (response.data?.code == 200) return response.data?.data?.rows;
 };
 export async function fetchProduct(id:any) {
-    const response =  await clientApi.get(`/system/products/${id}`);
+    const response =  await clientApi.get(`/system/product/${id}`);
     if (response.data?.code == 200) return response.data;
 };
 export async function fetchRegisteVisa(params:string,data) {
