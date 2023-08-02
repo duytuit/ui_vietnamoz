@@ -10,7 +10,7 @@ import { use, useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { fetchCategory, fetchServiceVisas } from './api';
 import { toast } from 'react-toastify';
-import { useSearchParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
 const formatOptionLabel = ({ value, name ,slug ,id,sdfdsfdsfsdfds}) => (
   <div style={{ display: "flex" }}>
@@ -30,9 +30,10 @@ const formatOptionLabel = ({ value, name ,slug ,id,sdfdsfdsfsdfds}) => (
   </div>
 );
 const SearchLocation = () => {
-
+  const router = useRouter()
+  const pathname = usePathname()
   const searchParams= useSearchParams();
-  const [value,setValue]=useState<any>(null)
+  const [value,setValue]=useState<any>()
   const [country, setCountry] = useState({
      projectId:2,
      categoryId:searchParams.get('id')||1,
@@ -49,11 +50,10 @@ const SearchLocation = () => {
     if( list_categories && id){
       const _category = list_categories.find( item =>item.id === parseInt(id));
         if(_category){
-          console.log(_category);
           setValue(_category)
         }
     }
-   },[])
+   })
     // console.log('list_categories',list_categories);
       const customStyles = {
         dropdownIndicator: (base: any) => ({
@@ -108,6 +108,16 @@ const SearchLocation = () => {
       };
       const getServiceVisa = async (event)=>{
         if(event){
+          const current = new URLSearchParams(Array.from(searchParams.entries())); // -> has to use this form
+            // cast to string
+          current.delete("id");
+          current.set("id", event.id);
+          const search = current.toString();
+          // or const query = `${'?'.repeat(search.length && 1)}${search}`;
+          const query = search ? `?${search}` : "";
+          console.log(`${pathname}${query}`);
+          
+          router.push(`${pathname}${query}`);
           setCountry({...country,categoryId:event.id,name:event.name});
           setValue(event)
         }
